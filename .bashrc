@@ -117,14 +117,12 @@ eval "$(rbenv init -)"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-PATH="$PATH":/usr/games
+PATH=$PATH:/usr/games
 ## dart pub path
 PATH=$PATH:/bin/dart/dart-sdk/bin
+PATH=$PATH:/bin/dart
 
-#起動した時の処理
 date
-echo "How Is Your Progress?"
-
 ## prompt
 PS1="\`
 if [ \$? = 0 ]; then 

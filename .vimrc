@@ -88,4 +88,6 @@ au BufNewFile,BufRead *.dart set filetype=dart
 au BufNewFile,BufRead *.tex set filetype=tex
 au BufNewFile *.tex 0r $HOME/.vim/template/tex.txt
 
+"Dart
+au BufNewFile pubspec.yaml 0r $HOME/.vim/template/pubspec.yaml
 "Vim LaTeX

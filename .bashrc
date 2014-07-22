@@ -86,7 +86,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias sl='ls'
-
+alias vvim='vim'
+alias vimm='vim'
+alias sintyoku='echo 進捗どうですか'
 #It's joke
 
 alias ks='ls'
@@ -117,7 +119,8 @@ eval "$(rbenv init -)"
 export PATH="/usr/local/heroku/bin:$PATH"
 PATH="$PATH":/usr/games
 ## dart pub path
-export PATH=$PATH:home/sh4869/tool/dart/dart-sdk/bin
+PATH=$PATH:/bin/dart/dart-sdk/bin
+
 #起動した時の処理
 date
 echo "How Is Your Progress?"

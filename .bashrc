@@ -86,6 +86,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias sl='ls'
+alias lcd='cd'
 alias vvim='vim'
 alias vimm='vim'
 alias sintyoku='echo 進捗どうですか'
@@ -117,12 +118,11 @@ eval "$(rbenv init -)"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-PATH=$PATH:/usr/games
+#PATH=$PATH:/usr/games
 ## dart pub path
-PATH=$PATH:/bin/dart/dart-sdk/bin
-PATH=$PATH:/bin/dart
-
-date
+#PATH=$PATH:/bin/dart/dart-sdk/bin
+#PATH=$PATH:/bin/dart
+PATH=$PATH:/home/sh4869/dart-build/dart/sdk/bin
 ## prompt
 PS1="\`
 if [ \$? = 0 ]; then 

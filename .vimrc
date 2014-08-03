@@ -57,7 +57,6 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'rbtnn/puyo.vim'
 NeoBundle "sudar/vim-arduino-syntax"
 NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'tpope/vim-rails'
 NeoBundle 'dart-lang/dart-vim-plugin'
 NeoBundle 'jcf/vim-latex'
 NeoBundle 'tyru/open-browser.vim'
@@ -81,6 +80,7 @@ let g:NERDTreeMinimalUI=1
 let g:NERDTreeDirArrows=0
 let g:NERDTreeMouseMode=2
 let g:uer_emmet_settings = {'lang' : 'ja'}
+"File set
 au BufNewFile,BufRead *.ino set filetype=arduino
 au BufNewFile,BufRead *.kn	set filetype=kuin
 au BufNewFile,BufRead *.md  set filetype=markdown
@@ -90,4 +90,5 @@ au BufNewFile *.tex 0r $HOME/.vim/template/tex.txt
 
 "Dart
 au BufNewFile pubspec.yaml 0r $HOME/.vim/template/pubspec.yaml
+
 "Vim LaTeX

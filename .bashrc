@@ -148,3 +148,4 @@ function proml {
   PS1="\h@\u:\W\$(parse_git_branch) \$ "
 }
 proml
+source ~/.git-completion.bash

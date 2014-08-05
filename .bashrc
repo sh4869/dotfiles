@@ -138,3 +138,13 @@ case $TERM in
 	PS1="\[\e]0;${_termtitle}\007\]${PS1}"
 	;;
 esac
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+function precmd() {
+  PROMPT="\h@\u:\W\$(parse_git_branch) \$ "
+}
+function proml {
+  PS1="\h@\u:\W\$(parse_git_branch) \$ "
+}
+proml

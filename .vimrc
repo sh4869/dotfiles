@@ -91,4 +91,8 @@ au BufNewFile *.tex 0r $HOME/.vim/template/tex.txt
 "Dart
 au BufNewFile pubspec.yaml 0r $HOME/.vim/template/pubspec.yaml
 
-"Vim LaTeX
+"NeoBundleLazy
+
+NeoBundleLazy 'jcf/vim-latex',{
+			\"autoload":{"filetypes":["tex"]}
+   			\}

@@ -93,6 +93,3 @@ au BufNewFile pubspec.yaml 0r $HOME/.vim/template/pubspec.yaml
 
 "NeoBundleLazy
 
-NeoBundleLazy 'jcf/vim-latex',{
-			\"autoload":{"filetypes":["tex"]}
-   			\}

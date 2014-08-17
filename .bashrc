@@ -122,7 +122,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 ## dart pub path
 #PATH=$PATH:/bin/dart/dart-sdk/bin
 #PATH=$PATH:/bin/dart
-PATH=$PATH:/home/sh4869/dart-build/dart/sdk/bin
+PATH=$PATH:/home/sh4869/Build/dart-build/dart/sdk/bin
 ## prompt
 PS1="\`
 if [ \$? = 0 ]; then 
@@ -147,5 +147,4 @@ function precmd() {
 function proml {
   PS1="\h@\u:\W\$(parse_git_branch) \$ "
 }
-proml
 source ~/.git-completion.bash

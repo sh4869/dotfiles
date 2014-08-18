@@ -89,8 +89,6 @@ alias sl='ls'
 alias lcd='cd'
 alias vvim='vim'
 alias vimm='vim'
-alias sintyoku='echo 進捗どうですか'
-#It's joke
 
 alias ks='ls'
 alias github='google-chrome https://github.com'
@@ -118,12 +116,13 @@ eval "$(rbenv init -)"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-#PATH=$PATH:/usr/games
-## dart pub path
-#PATH=$PATH:/bin/dart/dart-sdk/bin
-#PATH=$PATH:/bin/dart
+#Added PATHs
 PATH=$PATH:/home/sh4869/Build/dart-build/dart/sdk/bin
 PATH=$PATH:/home/sh4869/arduino/
+
+#mikutter
+alias mikutter='ruby ~/Documents/mikutter/mikutter.rb'
+
 ## prompt
 PS1="\`
 if [ \$? = 0 ]; then 

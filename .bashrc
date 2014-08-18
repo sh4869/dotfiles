@@ -123,6 +123,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 #PATH=$PATH:/bin/dart/dart-sdk/bin
 #PATH=$PATH:/bin/dart
 PATH=$PATH:/home/sh4869/Build/dart-build/dart/sdk/bin
+PATH=$PATH:/home/sh4869/arduino/
 ## prompt
 PS1="\`
 if [ \$? = 0 ]; then 

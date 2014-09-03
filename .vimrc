@@ -15,6 +15,7 @@ set mouse=a
 set fileencoding=utf-8
 setlocal formatoptions-=r
 setlocal formatoptions-=o
+autocmd FileType * setlocal formatoptions-=ro
 "---calendar--"
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1

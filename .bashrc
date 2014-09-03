@@ -119,7 +119,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 #Added PATHs
 PATH=$PATH:/home/sh4869/Build/dart-build/dart/sdk/bin
 PATH=$PATH:/home/sh4869/arduino/
-
+PATH=$PATH:/home/sh4869/Build/Qt/5.3/gcc/bin
 #mikutter
 alias mikutter='ruby ~/Documents/mikutter/mikutter.rb'
 

@@ -95,7 +95,7 @@ alias github='google-chrome https://github.com'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
+alias server='python -mSimpleHTTPServer'
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -117,7 +117,8 @@ eval "$(rbenv init -)"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 #Added PATHs
-PATH=$PATH:/home/sh4869/Build/dart-build/dart/sdk/bin
+PATH=$PATH:/home/sh4869/Build/dart-build/dart-src/dart/sdk/bin
+PATH=$PATH:/home/sh4869/Build/dart-build/depot_tools
 PATH=$PATH:/home/sh4869/arduino/
 PATH=$PATH:/home/sh4869/Build/Qt/5.3/gcc/bin
 #mikutter

@@ -63,6 +63,7 @@ NeoBundle 'jcf/vim-latex'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'basyura/twibill.vim'
 NeoBundle 'basyura/TweetVim'
+NeoBundle 'peterhoeg/vim-qml'
 "GitHub以外のGitリポジトリにあるプラグインを利用するn on
 " vim-scripts リポジトリにあるプラグインを利用する
 "Git以外のリポジトリにあるプラグインを利用する
@@ -87,6 +88,7 @@ au BufNewFile,BufRead *.kn	set filetype=kuin
 au BufNewFile,BufRead *.md  set filetype=markdown
 au BufNewFile,BufRead *.dart set filetype=dart
 au BufNewFile,BufRead *.tex set filetype=tex
+au BufNewFile,BufRead *.qml set filetype=qml
 au BufNewFile *.tex 0r $HOME/.vim/template/tex.txt
 
 "Dart

@@ -10,6 +10,7 @@ set smartindent
 set tabstop=4
 set shiftwidth=2
 set clipboard=unnamed,autoselect
+set synmaxcol=120
 syntax on
 set mouse=a
 set fileencoding=utf-8
@@ -109,3 +110,6 @@ let g:neocomplcache_dictionary_filetype_lists = {
     \ 'default' : ''
     \ }
 inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+let g:html_indent_script1="inc"
+let g:html_indent_style1="inc"
+let g:html_indent_inctags="html,body,head"

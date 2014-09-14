@@ -13,13 +13,12 @@ set clipboard=unnamed,autoselect
 set synmaxcol=120
 syntax on
 set mouse=a
+set modifiable
 set fileencoding=utf-8
 setlocal formatoptions-=r
 setlocal formatoptions-=o
 autocmd FileType * setlocal formatoptions-=ro
 "---calendar--"
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
 
 "---neobundle--"
 set nocompatible               " Be iMproved
@@ -90,6 +89,7 @@ au BufNewFile,BufRead *.md  set filetype=markdown
 au BufNewFile,BufRead *.dart set filetype=dart
 au BufNewFile,BufRead *.tex set filetype=tex
 au BufNewFile,BufRead *.qml set filetype=qml
+au BufNewFile,BufRead *.qrc set filetype=xml
 au BufNewFile *.tex 0r $HOME/.vim/template/tex.txt
 
 "Dart

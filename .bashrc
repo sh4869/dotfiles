@@ -122,6 +122,7 @@ PATH=$PATH:/home/sh4869/Build/dart-build/depot_tools
 PATH=$PATH:/home/sh4869/arduino/
 PATH=$PATH:/home/sh4869/Build/Qt/5.3/gcc/bin
 PATH=$PATH:/home/sh4869/Documents/download/Sublime\ Text\ 2
+PATH=$PATH:/home/sh4869/Build/Qt/5.3/gcc/bin
 #mikutter
 alias mikutter='ruby ~/Documents/mikutter/mikutter.rb'
 

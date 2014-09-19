@@ -150,4 +150,8 @@ function precmd() {
 function proml {
   PS1="\h@\u:\W\$(parse_git_branch) \$ "
 }
+texcompile() {
+	platex $1.tex
+	dvipdfmx $1
+}
 source ~/.git-completion.bash

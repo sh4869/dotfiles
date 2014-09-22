@@ -5,3 +5,5 @@
 	default = simple
 [github]
 	user = sh4869
+[core]
+	editor = vim

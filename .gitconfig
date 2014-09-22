@@ -7,3 +7,5 @@
 	user = sh4869
 [core]
 	editor = vim
+[color]
+	ui = true

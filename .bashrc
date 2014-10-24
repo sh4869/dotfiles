@@ -87,6 +87,8 @@ alias la='ls -A'
 alias l='ls -CF'
 alias sl='ls'
 alias lcd='cd'
+alias lscd='cd'
+alias cdvim='vim'
 alias vvim='vim'
 alias vimm='vim'
 
@@ -123,6 +125,7 @@ PATH=$PATH:/home/sh4869/arduino/
 PATH=$PATH:/home/sh4869/Build/Qt/5.3/gcc/bin
 PATH=$PATH:/home/sh4869/Documents/download/Sublime\ Text\ 2
 PATH=$PATH:/home/sh4869/Build/Qt/Tools/QtCreator/bin
+
 #mikutter
 alias mikutter='ruby ~/Documents/mikutter/mikutter.rb'
 

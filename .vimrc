@@ -66,6 +66,7 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'basyura/twibill.vim'
 NeoBundle 'basyura/TweetVim'
 NeoBundle 'peterhoeg/vim-qml'
+NeoBundle 'davidhalter/jedi-vim'
 "GitHub以外のGitリポジトリにあるプラグインを利用するn on
 " vim-scripts リポジトリにあるプラグインを利用する
 "Git以外のリポジトリにあるプラグインを利用する

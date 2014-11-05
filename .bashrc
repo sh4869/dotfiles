@@ -150,5 +150,8 @@ texcompile() {
 	platex $1.tex
 	dvipdfmx $1
 }
-
+my_cd() {
+  cd $1 && ls
+}
+alias cd='my_cd'
 

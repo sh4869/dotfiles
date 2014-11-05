@@ -61,12 +61,12 @@ NeoBundle 'rbtnn/puyo.vim'
 NeoBundle "sudar/vim-arduino-syntax"
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'dart-lang/dart-vim-plugin'
-NeoBundle 'jcf/vim-latex'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'basyura/twibill.vim'
 NeoBundle 'basyura/TweetVim'
 NeoBundle 'peterhoeg/vim-qml'
 NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'vim-scripts/gnuplot.vim'
 "GitHub以外のGitリポジトリにあるプラグインを利用するn on
 " vim-scripts リポジトリにあるプラグインを利用する
 "Git以外のリポジトリにあるプラグインを利用する

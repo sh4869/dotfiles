@@ -13,8 +13,13 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=10000
+
+HISTTIMEFORMAT='%y/%m/%d %H:%M:%S  '
+HISTIGNORE=ls:la:ll:lla:history
+HISTCONTROL=ignoreboth
+
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -91,11 +96,8 @@ alias lscd='cd'
 alias cdvim='vim'
 alias vvim='vim'
 alias vimm='vim'
-
 alias ks='ls'
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
 alias server='python -mSimpleHTTPServer'
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -126,8 +128,8 @@ PATH=$PATH:/home/sh4869/Documents/download/Sublime\ Text\ 2
 PATH=$PATH:/home/sh4869/Build/Qt/Tools/QtCreator/bin
 PATH=$PATH:/home/sh4869/Build/skype-4.3.0.37
 
-#mikutter
 
+source ~/.git-completion.bash
 ## prompt
 PS1="\`
 if [ \$? = 0 ]; then 
@@ -143,8 +145,10 @@ case $TERM in
 	PS1="\[\e]0;${_termtitle}\007\]${PS1}"
 	;;
 esac
+#My original Functions
 texcompile() {
 	platex $1.tex
 	dvipdfmx $1
 }
-source ~/.git-completion.bash
+
+

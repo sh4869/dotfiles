@@ -67,9 +67,9 @@ NeoBundle 'basyura/TweetVim'
 NeoBundle 'peterhoeg/vim-qml'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'vim-scripts/gnuplot.vim'
-"GitHub以外のGitリポジトリにあるプラグインを利用するn on
-" vim-scripts リポジトリにあるプラグインを利用する
-"Git以外のリポジトリにあるプラグインを利用する
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'JuliaLang/julia-vim'
+
 filetype plugin on
 filetype indent on
 nmap <silent> <C-e>      :NERDTreeToggle<CR>

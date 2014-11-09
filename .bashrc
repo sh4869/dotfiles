@@ -127,8 +127,7 @@ PATH=$PATH:/home/sh4869/Build/Qt/5.3/gcc/bin
 PATH=$PATH:/home/sh4869/Documents/download/Sublime\ Text\ 2
 PATH=$PATH:/home/sh4869/Build/Qt/Tools/QtCreator/bin
 PATH=$PATH:/home/sh4869/Build/skype-4.3.0.37
-
-
+PATH=$PATH:/home/sh4869/.vim/script
 source ~/.git-completion.bash
 ## prompt
 PS1="\`

@@ -116,3 +116,9 @@ inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
 let g:html_indent_inctags="html,body,head"
+
+function! CompileHaml()
+      silent exe ":! perl ~/.vim/script/compile_haml %"
+endfunction
+
+au BufWritePost *.haml,*.scss,*.coffee call CompileHaml()

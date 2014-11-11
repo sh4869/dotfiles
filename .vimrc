@@ -17,7 +17,6 @@ set modifiable
 set fileencoding=utf-8
 setlocal formatoptions-=r
 setlocal formatoptions-=o
-colorscheme hybrid
 autocmd FileType * setlocal formatoptions-=ro
 set background=dark
 "---calendar--"

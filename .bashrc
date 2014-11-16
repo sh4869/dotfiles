@@ -133,9 +133,9 @@ texcompile() {
 
 PS1="\`
 if [ \$? = 0 ]; then 
-  echo \[\e[36m\]; 
+  echo \[\e[34m\]; 
 else
   echo \[\e[31m\]; 
 fi
-\`[\u@\H \w]\[\e[0m\]\n$"
+\`\e[47m[\u@\H \w ]\e[37;41m \t \[\e[0m\]\n$"
 

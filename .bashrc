@@ -1,7 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -129,7 +125,12 @@ PATH=$PATH:/home/sh4869/Build/Qt/Tools/QtCreator/bin
 PATH=$PATH:/home/sh4869/Build/skype-4.3.0.37
 PATH=$PATH:/home/sh4869/.vim/script
 source ~/.git-completion.bash
-## prompt
+#My original Functions
+texcompile() {
+  platex $1.tex
+  dvipdfmx $1
+}
+
 PS1="\`
 if [ \$? = 0 ]; then 
   echo \[\e[36m\]; 
@@ -138,32 +139,3 @@ else
 fi
 \`[\u@\H \w]\[\e[0m\]\n$"
 
-case $TERM in
-  kterm|xterm|mlterm|cygwin|vt102)
-	_termtitle="\h:\w"
-	PS1="\[\e]0;${_termtitle}\007\]${PS1}"
-	;;
-esac
-#My original Functions
-texcompile() {
-  platex $1.tex
-  dvipdfmx $1
-}
-my_cd() {
-  cd $1 && ls
-}
-alias cd='my_cd'
-
-rgb() {
-  local red=$(( $1 * 6 / 256 ))
-  local green=$(( $2 * 6 / 256 ))
-  local blue=$(( $3 * 6 / 256 ))
-  echo $(( red * 36 + green * 6 + blue + 16 ))
-}
-color() {
-  echo "\["$'\e'"[38;5;${1}m\]"
-}
-background() {
-  echo "\["$'\e'"[48;5;${1}m\]"m
-}
-default_color="\["$'\e'"[0m\]"

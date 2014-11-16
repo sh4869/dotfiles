@@ -146,11 +146,24 @@ case $TERM in
 esac
 #My original Functions
 texcompile() {
-	platex $1.tex
-	dvipdfmx $1
+  platex $1.tex
+  dvipdfmx $1
 }
 my_cd() {
   cd $1 && ls
 }
 alias cd='my_cd'
 
+rgb() {
+  local red=$(( $1 * 6 / 256 ))
+  local green=$(( $2 * 6 / 256 ))
+  local blue=$(( $3 * 6 / 256 ))
+  echo $(( red * 36 + green * 6 + blue + 16 ))
+}
+color() {
+  echo "\["$'\e'"[38;5;${1}m\]"
+}
+background() {
+  echo "\["$'\e'"[48;5;${1}m\]"m
+}
+default_color="\["$'\e'"[0m\]"

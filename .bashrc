@@ -83,6 +83,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
+alias ls='ls -F --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -131,11 +132,12 @@ texcompile() {
   dvipdfmx $1
 }
 
+GIT_PS1_SHOWDIRTYSTATE=true
 PS1="\`
 if [ \$? = 0 ]; then 
   echo \[\e[34m\]; 
 else
   echo \[\e[31m\]; 
 fi
-\`\e[47m[\u@\H \w ]\e[37;41m \t \[\e[0m\]\n$"
+\`\e[47m[\u@\H \w ]\$(__git_ps1) \e[37;41m \t \[\e[0m\]\n$"
 

@@ -158,3 +158,9 @@ else
 fi
 \`\e[47m[\u@\H \w ] \e[37;41m \t $PS1_GIT_BRANCH\[\e[0m\]\n$"
 
+case $TERM in
+  kterm|xterm|mlterm|cygwin|vt102)
+	_termtitle="\h:\w"
+	PS1="\[\e]0;${_termtitle}\007\]${PS1}"
+	;;
+esac

@@ -131,13 +131,30 @@ texcompile() {
   platex $1.tex
   dvipdfmx $1
 }
+function length()
+{
+  echo -n ${#1}
+}
 
+function init-prompt-git-branch()
+{
+  git symbolic-ref HEAD 2>/dev/null >/dev/null &&
+	echo "($(git symbolic-ref HEAD 2>/dev/null | sed 's/^refs\/heads\///'))"
+}
+
+if which git 2>/dev/null >/dev/null
+then
+  export PS1_GIT_BRANCH='\[\e[$[COLUMNS]D\]\[\e[1;31m\]\[\e[$[COLUMNS-$(length $(init-prompt-git-branch))]C\]$(init-prompt-git-branch)\[\e[$[COLUMNS]D\]\[\e[0m\]'
+else
+  export PS1_GIT_BRANCH=
+fi
 GIT_PS1_SHOWDIRTYSTATE=true
+
 PS1="\`
 if [ \$? = 0 ]; then 
   echo \[\e[34m\]; 
 else
   echo \[\e[31m\]; 
 fi
-\`\e[47m[\u@\H \w ]\$(__git_ps1) \e[37;41m \t \[\e[0m\]\n$"
+\`\e[47m[\u@\H \w ] \e[37;41m \t $PS1_GIT_BRANCH\[\e[0m\]\n$"
 

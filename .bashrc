@@ -150,7 +150,7 @@ else
 fi
 GIT_PS1_SHOWDIRTYSTATE=true
 
-PS1="\`
+PS1="\n\`
 if [ \$? = 0 ]; then 
   echo \[\e[34m\]; 
 else

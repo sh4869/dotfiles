@@ -164,3 +164,8 @@ case $TERM in
 	PS1="\[\e]0;${_termtitle}\007\]${PS1}"
 	;;
 esac
+
+mycd(){
+  cd $1 && ls --color=auto -F
+}
+alias cd='mycd'

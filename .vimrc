@@ -7,7 +7,7 @@ set wildmenu
 set showcmd
 set noswapfile
 set smartindent
-set tabstop=4
+set tabstop=2
 set shiftwidth=2
 set clipboard=unnamed,autoselect
 set synmaxcol=120
@@ -117,3 +117,4 @@ let g:html_indent_style1="inc"
 let g:html_indent_inctags="html,body,head"
 
 inoremap <expr><Down> neocomplcache#close_popup() . "\<Down>"
+inoremap <expr><Up> neocomplcache#close_popup() . "\<Down>"

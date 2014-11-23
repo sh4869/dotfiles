@@ -68,6 +68,7 @@ NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'vim-scripts/gnuplot.vim'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'JuliaLang/julia-vim'
+NeoBundle 'vim-latex/vim-latex'
 
 filetype plugin on
 filetype indent on
@@ -118,3 +119,6 @@ let g:html_indent_inctags="html,body,head"
 
 inoremap <expr><Down> neocomplcache#close_popup() . "\<Down>"
 inoremap <expr><Up> neocomplcache#close_popup() . "\<Down>"
+
+" Vim-latex Setting
+

@@ -169,3 +169,4 @@ mycd(){
   cd $1 && ls --color=auto -F
 }
 alias cd='mycd'
+alias c='clear'

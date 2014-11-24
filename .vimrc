@@ -118,7 +118,7 @@ let g:html_indent_style1="inc"
 let g:html_indent_inctags="html,body,head"
 
 inoremap <expr><Down> neocomplcache#close_popup() . "\<Down>"
-inoremap <expr><Up> neocomplcache#close_popup() . "\<Down>"
+inoremap <expr><Up> neocomplcache#close_popup() . "\<Up>"
 
 " Vim-latex Setting
 

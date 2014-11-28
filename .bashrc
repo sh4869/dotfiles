@@ -171,4 +171,3 @@ mycd(){
 alias cd='mycd'
 alias c='clear'
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
-function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}

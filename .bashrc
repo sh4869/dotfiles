@@ -95,7 +95,6 @@ alias vvim='vim'
 alias vimm='vim'
 alias ks='ls'
 
-alias server='python -mSimpleHTTPServer'
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -121,11 +120,12 @@ PATH=$PATH:/home/sh4869/Build/dart
 PATH=$PATH:/home/sh4869/Build/dart/dart-sdk/bin
 PATH=$PATH:/home/sh4869/arduino/
 PATH=$PATH:/home/sh4869/Build/Qt/5.3/gcc/bin
-PATH=$PATH:/home/sh4869/Documents/download/Sublime\ Text\ 2
 PATH=$PATH:/home/sh4869/Build/Qt/Tools/QtCreator/bin
 PATH=$PATH:/home/sh4869/Build/skype-4.3.0.37
 PATH=$PATH:/home/sh4869/.pub-cache/bin
 PATH=$PATH:/home/sh4869/.vim/script
+PATH=$PATH:/home/sh4869/Build/dmd2/linux/bin32
+PATH=$PATH:/home/sh4869/Build/sublime_text_3
 source ~/.git-completion.bash
 #My original Functions
 texcompile() {
@@ -172,3 +172,6 @@ mycd(){
 alias cd='mycd'
 alias c='clear'
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+function server(){
+	python -mSimpleHTTPServer  $1 &
+}

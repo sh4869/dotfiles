@@ -1,7 +1,7 @@
 set number
 set notitle
 set nocompatible
-set notitle
+set title
 set showmatch
 set wildmenu
 set showcmd

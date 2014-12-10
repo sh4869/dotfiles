@@ -171,6 +171,8 @@ mycd(){
 }
 alias cd='mycd'
 alias c='clear'
+alias subl='sublime_text'
+
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 function server(){
 	python -mSimpleHTTPServer  $1 &

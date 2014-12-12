@@ -69,6 +69,7 @@ NeoBundle 'vim-scripts/gnuplot.vim'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'JuliaLang/julia-vim'
 NeoBundle 'vim-latex/vim-latex'
+NeoBundle 'tpope/vim-fugitive'
 
 filetype plugin on
 filetype indent on

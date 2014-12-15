@@ -70,6 +70,11 @@ NeoBundle 'tpope/vim-haml'
 NeoBundle 'JuliaLang/julia-vim'
 NeoBundle 'vim-latex/vim-latex'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'Shougo/vimproc.vim'
+NeoBundle 'jceb/vim-hier'
+NeoBundle 'dannyob/quickfixstatus'
+NeoBundle 'miyakogi/vim-dartanalyzer'
+
 
 filetype plugin on
 filetype indent on
@@ -123,3 +128,4 @@ inoremap <expr><Up> neocomplcache#close_popup() . "\<Up>"
 
 " Vim-latex Setting
 
+let g:dartanalyzer_show_startupmsg = 1

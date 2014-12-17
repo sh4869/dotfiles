@@ -177,3 +177,4 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 function server(){
 	python -mSimpleHTTPServer  $1 &
 }
+alias qmake='/home/sh4869/Build/Qt/5.3/gcc/bin/qmake'

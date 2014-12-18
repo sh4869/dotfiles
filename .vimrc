@@ -126,6 +126,6 @@ let g:html_indent_inctags="html,body,head"
 inoremap <expr><Down> neocomplcache#close_popup() . "\<Down>"
 inoremap <expr><Up> neocomplcache#close_popup() . "\<Up>"
 
-" Vim-latex Setting
 
+let g:dartanalyzer_disable_autostart = 1
 let g:dartanalyzer_show_startupmsg = 1

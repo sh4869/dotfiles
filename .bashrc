@@ -147,7 +147,7 @@ alias subl='sublime_text'
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 function server(){
- ruby -run -e httpd . -p 8000 &
+ python -m http.server 
 }
 alias qmake='/home/sh4869/Build/Qt/5.3/gcc/bin/qmake'
 export PYENV_ROOT="$HOME/.pyenv"

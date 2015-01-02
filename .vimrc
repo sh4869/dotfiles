@@ -73,7 +73,6 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'jceb/vim-hier'
 NeoBundle 'dannyob/quickfixstatus'
-NeoBundle 'miyakogi/vim-dartanalyzer'
 
 
 filetype plugin on
@@ -127,5 +126,3 @@ inoremap <expr><Down> neocomplcache#close_popup() . "\<Down>"
 inoremap <expr><Up> neocomplcache#close_popup() . "\<Up>"
 
 
-let g:dartanalyzer_disable_autostart = 1
-let g:dartanalyzer_show_startupmsg = 1

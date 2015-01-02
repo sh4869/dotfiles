@@ -9,11 +9,13 @@ HISTTIMEFORMAT='%y/%m/%d %H:%M:%S  '
 HISTIGNORE=ls:la:ll:lla:history
 HISTCONTROL=ignoreboth
 
-shopt -s checkwinsize
+shopt -s checkwinsize #ウィンドウの大きさのチェック & LINESとCOLUMNSの大きさの変更
 
+#Gitの補完用のファイルを読み込みます
 source ~/.git-completion.bash
 
-function length()
+#Gitのbranchを右側に表示する
+function length()  
 {
   echo -n ${#1}
 }
@@ -23,7 +25,6 @@ function init-prompt-git-branch()
   git symbolic-ref HEAD 2>/dev/null >/dev/null &&
 	echo "($(git symbolic-ref HEAD 2>/dev/null | sed 's/^refs\/heads\///'))"
 }
-
 if which git 2>/dev/null >/dev/null
 then
   export PS1_GIT_BRANCH='\[\e[$[COLUMNS]D\]\[\e[1;31m\]\[\e[$[COLUMNS-$(length $(init-prompt-git-branch))]C\]$(init-prompt-git-branch)\[\e[$[COLUMNS]D\]\[\e[0m\]'
@@ -32,15 +33,17 @@ else
 fi
 GIT_PS1_SHOWDIRTYSTATE=true
 
-
-PS1="\n\`
+#bashのプロンプトの設定
+PS1="\n\` 
 if [ \$? = 0 ]; then 
-  echo \[\e[34m\]; 
+  echo \[\e[34m\];  
 else
   echo \[\e[31m\]; 
 fi
 \`\e[47m[\u@\H \w ] \e[37;41m \t $PS1_GIT_BRANCH\[\e[0m\]\n$"
 
+
+#ターミナルのタイトルを動的に変更していく
 case $TERM in
   kterm|xterm|mlterm|cygwin|vt102)
 	_termtitle="\h:\w"
@@ -48,6 +51,8 @@ case $TERM in
 	;;
 esac
 
+
+#cdを置き換える
 function mycd(){
   cd $1 && ls --color=auto -F
 }

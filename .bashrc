@@ -96,6 +96,7 @@ PATH=$PATH:/home/sh4869/.pub-cache/bin
 PATH=$PATH:/home/sh4869/.vim/script
 PATH=$PATH:/home/sh4869/Build/dmd2/linux/bin32
 PATH=$PATH:/home/sh4869/Build/sublime_text_3
+PATH=$PATH:/home/sh4869/Build/dart-repo/depot_tools
 
 source ~/.git-completion.bash
 
@@ -149,7 +150,11 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 function server(){
  python -m http.server 
 }
+
 alias qmake='/home/sh4869/Build/Qt/5.3/gcc/bin/qmake'
+
+
+#Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"

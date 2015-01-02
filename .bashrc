@@ -100,5 +100,5 @@ PATH=$PATH:/home/sh4869/.vim/script
 PATH=$PATH:/home/sh4869/Build/dmd2/linux/bin32
 PATH=$PATH:/home/sh4869/Build/sublime_text_3
 PATH=$PATH:/home/sh4869/Build/dart-repo/depot_tools
-PATH=$PATH:/home/sh4869/Build/dart-repo/dart/sdk
+PATH=$PATH:/home/sh4869/Build/dart-repo/dart/sdk/bin
 

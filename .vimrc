@@ -73,6 +73,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'jceb/vim-hier'
 NeoBundle 'dannyob/quickfixstatus'
+NeoBundle 'mrtazz/simplenote.vim'
 
 
 filetype plugin on

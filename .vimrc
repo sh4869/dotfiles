@@ -46,7 +46,6 @@ if has('vim_starting')
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'tatt61880/kuin_vim'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'marijnh/tern'
 NeoBundle 'mattn/gist-vim'
@@ -56,7 +55,6 @@ NeoBundle 'othree/html5.vim'
 NeoBundle 'itchyny/calendar.vim'
 NeoBundle 'scrooloose/nerdtree.git'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'rbtnn/puyo.vim'
 NeoBundle "sudar/vim-arduino-syntax"
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'dart-lang/dart-vim-plugin'
@@ -74,23 +72,27 @@ NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'jceb/vim-hier'
 NeoBundle 'dannyob/quickfixstatus'
 NeoBundle 'mrtazz/simplenote.vim'
-
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 filetype plugin on
 filetype indent on
+
 nmap <silent> <C-e>      :NERDTreeToggle<CR>
 vmap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
 omap <silent> <C-e>      :NERDTreeToggle<CR>
 imap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
 cmap <silent> <C-e> <C-u>:NERDTreeToggle<CR>
+
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 let g:NERDTreeIgnore=['\.clean$', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowHidden=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeDirArrows=0
 let g:NERDTreeMouseMode=2
 let g:uer_emmet_settings = {'lang' : 'ja'}
+
 "File set
 au BufNewFile,BufRead *.ino set filetype=arduino
 au BufNewFile,BufRead *.kn	set filetype=kuin
@@ -126,4 +128,7 @@ let g:html_indent_inctags="html,body,head"
 inoremap <expr><Down> neocomplcache#close_popup() . "\<Down>"
 inoremap <expr><Up> neocomplcache#close_popup() . "\<Up>"
 
-
+let g:indent_guides_auto_colors = 1
+let g;indent_guides_start_level = 2
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey

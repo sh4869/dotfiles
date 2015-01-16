@@ -19,6 +19,7 @@ setlocal formatoptions-=r
 setlocal formatoptions-=o
 autocmd FileType * setlocal formatoptions-=ro
 set background=dark
+colorscheme molokai
 "---calendar--"
 
 "---neobundle--"
@@ -128,7 +129,9 @@ let g:html_indent_inctags="html,body,head"
 inoremap <expr><Down> neocomplcache#close_popup() . "\<Down>"
 inoremap <expr><Up> neocomplcache#close_popup() . "\<Up>"
 
-let g:indent_guides_auto_colors = 1
-let g;indent_guides_start_level = 2
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+let g:indent_guides_auto_colors=0
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level=2
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=lightcyan
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=lightblue

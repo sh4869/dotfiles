@@ -74,6 +74,7 @@ NeoBundle 'jceb/vim-hier'
 NeoBundle 'dannyob/quickfixstatus'
 NeoBundle 'mrtazz/simplenote.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'Shirk/vim-gas'
 
 filetype plugin on
 filetype indent on

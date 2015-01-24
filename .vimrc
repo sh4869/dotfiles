@@ -7,7 +7,7 @@ set wildmenu
 set showcmd
 set noswapfile
 set smartindent
-set tabstop=2
+set tabstop=4
 set shiftwidth=2
 set clipboard=unnamed,autoselect
 set synmaxcol=120

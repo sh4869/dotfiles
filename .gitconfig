@@ -12,3 +12,5 @@
 [alias]
 	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	co = checkout
+[merge]
+	ff = false

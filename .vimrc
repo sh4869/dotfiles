@@ -19,7 +19,6 @@ setlocal formatoptions-=r
 setlocal formatoptions-=o
 autocmd FileType * setlocal formatoptions-=ro
 set background=dark
-colorscheme molokai
 "---calendar--"
 
 "---neobundle--"
@@ -73,7 +72,6 @@ NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'jceb/vim-hier'
 NeoBundle 'dannyob/quickfixstatus'
 NeoBundle 'mrtazz/simplenote.vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Shirk/vim-gas'
 NeoBundle 'AtsushiM/haml-compiler.vim'
 

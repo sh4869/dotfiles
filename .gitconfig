@@ -15,3 +15,5 @@
 	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 [merge]
 	ff = false
+[fetch]
+	prune = true

@@ -61,8 +61,8 @@ function mycd(){
 function gi() { 
   curl -L -s https://www.gitignore.io/api/$@ 
 }
-function server(){
- python -m http.server & 
+function server(  ){
+ python -m http.server  & 
 }
 
 #alias settings
@@ -102,7 +102,14 @@ PATH=$PATH:/home/sh4869/Build/dmd2/linux/bin32
 PATH=$PATH:/home/sh4869/Build/sublime_text_3
 PATH=$PATH:/home/sh4869/Build/dart-repo/depot_tools
 PATH=$PATH:/home/sh4869/Build/dart-repo/dart/sdk/bin
+PATH=$PATH:/home/sh4869/Build/dub
 
 
 # pkg config
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/home/sh4869/google-cloud-sdk/path.bash.inc'
+
+# The next line enables bash completion for gcloud.
+source '/home/sh4869/google-cloud-sdk/completion.bash.inc'

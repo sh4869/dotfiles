@@ -8,7 +8,7 @@ set showcmd
 set noswapfile
 set smartindent
 set tabstop=4
-set shiftwidth=2
+set shiftwidth=4
 set clipboard=unnamed,autoselect
 set synmaxcol=120
 syntax on
@@ -74,6 +74,7 @@ NeoBundle 'dannyob/quickfixstatus'
 NeoBundle 'mrtazz/simplenote.vim'
 NeoBundle 'Shirk/vim-gas'
 NeoBundle 'AtsushiM/haml-compiler.vim'
+NeoBundle 'JesseKPhillips/d.vim'
 
 filetype plugin on
 filetype indent on

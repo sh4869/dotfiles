@@ -103,7 +103,7 @@ PATH=$PATH:/home/sh4869/Build/sublime_text_3
 PATH=$PATH:/home/sh4869/Build/dart-repo/depot_tools
 PATH=$PATH:/home/sh4869/Build/dart-repo/dart/sdk/bin
 PATH=$PATH:/home/sh4869/Build/dub
-
+PATH=$PATH:$HOME/.nodebrew/current/bin
 
 # pkg config
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}

@@ -103,6 +103,7 @@ au BufNewFile,BufRead *.dart set filetype=dart
 au BufNewFile,BufRead *.tex set filetype=tex
 au BufNewFile,BufRead *.qml set filetype=qml
 au BufNewFile,BufRead *.qrc set filetype=xml
+au BufNewFile,BufRead *.cpp set filetype=cpp
 au BufNewFile *.tex 0r $HOME/.vim/template/tex.txt
 
 "Dart
@@ -136,3 +137,11 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level=2
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=lightcyan
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=lightblue
+
+""C++
+augroup cpp-path
+	autocmd!
+	autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include
+augroup END
+
+

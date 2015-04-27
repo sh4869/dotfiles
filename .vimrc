@@ -74,6 +74,7 @@ NeoBundle 'dannyob/quickfixstatus'
 NeoBundle 'Shirk/vim-gas'
 NeoBundle 'AtsushiM/haml-compiler.vim'
 NeoBundle 'JesseKPhillips/d.vim'
+NeoBundle 'cohama/agit.vim'
 
 filetype plugin on
 filetype indent on

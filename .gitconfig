@@ -7,6 +7,7 @@
 	user = sh4869
 [core]
 	editor = vim
+	excludesfile = /home/sh4869/.gitignore_global
 [color]
 	ui = true
 [alias]

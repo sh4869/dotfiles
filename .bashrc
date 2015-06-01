@@ -25,6 +25,7 @@ function init-prompt-git-branch()
   git symbolic-ref HEAD 2>/dev/null >/dev/null &&
 	echo "($(git symbolic-ref HEAD 2>/dev/null | sed 's/^refs\/heads\///'))"
 }
+
 if which git 2>/dev/null >/dev/null
 then
   export PS1_GIT_BRANCH='\[\e[$[COLUMNS]D\]\[\e[1;31m\]\[\e[$[COLUMNS-$(length $(init-prompt-git-branch))]C\]$(init-prompt-git-branch)\[\e[$[COLUMNS]D\]\[\e[0m\]'
@@ -60,8 +61,8 @@ function mycd(){
 function gi() { 
   curl -L -s https://www.gitignore.io/api/$@ 
 }
-function server(){
- python -m http.server & 
+function server(  ){
+ python -m http.server  & 
 }
 
 #alias settings
@@ -91,17 +92,24 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 #環境変数
-PATH=$PATH:/home/sh4869/arduino/
-PATH=$PATH:/home/sh4869/Build/Qt/5.3/gcc/bin
-PATH=$PATH:/home/sh4869/Build/Qt/Tools/QtCreator/bin
-PATH=$PATH:/home/sh4869/Build/skype-4.3.0.37
-PATH=$PATH:/home/sh4869/.pub-cache/bin
-PATH=$PATH:/home/sh4869/.vim/script
-PATH=$PATH:/home/sh4869/Build/dmd2/linux/bin32
-PATH=$PATH:/home/sh4869/Build/sublime_text_3
-PATH=$PATH:/home/sh4869/Build/dart-repo/depot_tools
-PATH=$PATH:/home/sh4869/Build/dart-repo/dart/sdk/bin
-
+PATH=$PATH:$HOME/arduino/
+PATH=$PATH:$HOME/Build/Qt/5.3/gcc/bin
+PATH=$PATH:$HOME/Build/Qt/Tools/QtCreator/bin
+PATH=$PATH:$HOME/Build/skype-4.3.0.37
+PATH=$PATH:$HOME/.pub-cache/bin
+PATH=$PATH:$HOME/.vim/script
+PATH=$PATH:$HOME/Build/dmd2/linux/bin32
+PATH=$PATH:$HOME/Build/sublime_text_3
+PATH=$PATH:$HOME/Build/dart-repo/depot_tools
+PATH=$PATH:$HOME/Build/dart-repo/dart/sdk/bin
+PATH=$PATH:$HOME/Build/dub
+PATH=$PATH:$HOME/.nodebrew/current/bin
 
 # pkg config
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/home/sh4869/google-cloud-sdk/path.bash.inc'
+
+# The next line enables bash completion for gcloud.
+source '/home/sh4869/google-cloud-sdk/completion.bash.inc'

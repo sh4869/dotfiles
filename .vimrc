@@ -7,8 +7,8 @@ set wildmenu
 set showcmd
 set noswapfile
 set smartindent
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set clipboard=unnamed,autoselect
 set synmaxcol=120
 syntax on
@@ -18,9 +18,11 @@ set fileencoding=utf-8
 setlocal formatoptions-=r
 setlocal formatoptions-=o
 autocmd FileType * setlocal formatoptions-=ro
-set background=dark
+
 colorscheme molokai
-"---calendar--"
+set t_Co=256
+set background=dark
+highlight Normal ctermbg=none
 
 "---neobundle--"
 set nocompatible               " Be iMproved
@@ -72,26 +74,15 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'jceb/vim-hier'
 NeoBundle 'dannyob/quickfixstatus'
-NeoBundle 'mrtazz/simplenote.vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'Shirk/vim-gas'
+NeoBundle 'AtsushiM/haml-compiler.vim'
+NeoBundle 'JesseKPhillips/d.vim'
+NeoBundle 'cohama/agit.vim'
+NeoBundle 'justinmk/vim-dirvish.git'
 
 filetype plugin on
 filetype indent on
 
-nmap <silent> <C-e>      :NERDTreeToggle<CR>
-vmap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
-omap <silent> <C-e>      :NERDTreeToggle<CR>
-imap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
-cmap <silent> <C-e> <C-u>:NERDTreeToggle<CR>
-
-autocmd vimenter * if !argc() | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-let g:NERDTreeIgnore=['\.clean$', '\.swp$', '\.bak$', '\~$']
-let g:NERDTreeShowHidden=1
-let g:NERDTreeMinimalUI=1
-let g:NERDTreeDirArrows=0
-let g:NERDTreeMouseMode=2
 let g:uer_emmet_settings = {'lang' : 'ja'}
 
 "File set
@@ -102,6 +93,7 @@ au BufNewFile,BufRead *.dart set filetype=dart
 au BufNewFile,BufRead *.tex set filetype=tex
 au BufNewFile,BufRead *.qml set filetype=qml
 au BufNewFile,BufRead *.qrc set filetype=xml
+au BufNewFile,BufRead *.cpp set filetype=cpp
 au BufNewFile *.tex 0r $HOME/.vim/template/tex.txt
 
 "Dart
@@ -135,3 +127,11 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level=2
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=lightcyan
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=lightblue
+
+""C++
+augroup cpp-path
+	autocmd!
+	autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include
+augroup END
+
+

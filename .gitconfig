@@ -7,8 +7,14 @@
 	user = sh4869
 [core]
 	editor = vim
+	excludesfile = /home/sh4869/.gitignore_global
 [color]
 	ui = true
 [alias]
 	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	co = checkout
+	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+[merge]
+	ff = false
+[fetch]
+	prune = true

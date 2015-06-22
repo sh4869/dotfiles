@@ -100,11 +100,10 @@ PATH=$PATH:$HOME/.pub-cache/bin
 PATH=$PATH:$HOME/.vim/script
 PATH=$PATH:$HOME/Build/dmd2/linux/bin32
 PATH=$PATH:$HOME/Build/sublime_text_3
-PATH=$PATH:$HOME/Build/dart-repo/depot_tools
-PATH=$PATH:$HOME/Build/dart-repo/dart/sdk/bin
+PATH=$PATH:$HOME/Build/dart-sdk/bin
 PATH=$PATH:$HOME/Build/dub
 PATH=$PATH:$HOME/.nodebrew/current/bin
-
+PATH=$PATH:$HOME/Build/cmake-3.2.3-Linux-i386/bin
 # pkg config
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}
 

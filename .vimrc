@@ -48,28 +48,22 @@ if has('vim_starting')
 " GitHubリポジトリにあるプラグインを利用する
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'marijnh/tern'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'myhere/vim-nodejs-complete'
 NeoBundle 'othree/html5.vim'
-NeoBundle 'itchyny/calendar.vim'
 NeoBundle 'scrooloose/nerdtree.git'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle "sudar/vim-arduino-syntax"
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'dart-lang/dart-vim-plugin'
 NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'basyura/twibill.vim'
-NeoBundle 'basyura/TweetVim'
 NeoBundle 'peterhoeg/vim-qml'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'vim-scripts/gnuplot.vim'
 NeoBundle 'tpope/vim-haml'
-NeoBundle 'JuliaLang/julia-vim'
-NeoBundle 'vim-latex/vim-latex'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'jceb/vim-hier'
@@ -79,6 +73,9 @@ NeoBundle 'AtsushiM/haml-compiler.vim'
 NeoBundle 'JesseKPhillips/d.vim'
 NeoBundle 'cohama/agit.vim'
 NeoBundle 'justinmk/vim-dirvish.git'
+NeoBundle 'moll/vim-node'
+NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+
 
 filetype plugin on
 filetype indent on

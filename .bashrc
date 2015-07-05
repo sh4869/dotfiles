@@ -28,7 +28,7 @@ function init-prompt-git-branch()
 
 if which git 2>/dev/null >/dev/null
 then
-	export PS1_GIT_BRANCH='\[\e[$[COLUMNS]D\]\[\e[1;31m\]\[\e[$[COLUMNS-$(length $(init-prompt-git-branch))]C\]$(init-prompt-git-branch)\[\e[$[COLUMNS]D\]\[\e[0m\]'
+	export PS1_GIT_BRANCH='\[\e[$[COLUMNS]D\]\[\e[30m\]\[\e[$[COLUMNS-$(length $(init-prompt-git-branch))]C\]$(init-prompt-git-branch)\[\e[$[COLUMNS]D\]\[\e[0m\]'
 else
 	export PS1_GIT_BRANCH=
 fi
@@ -41,7 +41,7 @@ if [ \$? = 0 ]; then
 else
 	echo \[\e[31m\]; 
 fi
-\`\e[47m[\u@\H \w ] \e[37;41m \t $PS1_GIT_BRANCH\[\e[0m\]\n$"
+\`\e[47m[\u@\H:\w]\e[30;46m \t $PS1_GIT_BRANCH\[\e[0m\]\n$"
 
 
 #ターミナルのタイトルを動的に変更していく
@@ -54,12 +54,12 @@ esac
 
 
 #cdを置き換える
-function mycd(){
-cd $1 && ls --color=auto -F
+mycd(){
+	cd $1 && ls --color=auto -F
 }
 
-function gi() { 
-curl -L -s https://www.gitignore.io/api/$@ 
+gi() { 
+	curl -L -s https://www.gitignore.io/api/$@ 
 }
 colors() {
 	local fgc bgc vals seq0

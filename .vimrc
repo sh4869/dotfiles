@@ -25,25 +25,20 @@ set background=dark
 highlight Normal ctermbg=none
 
 "---neobundle--"
-set nocompatible               " Be iMproved
-filetype off                   " Required!
+
+if 0 | endif
 
 if has('vim_starting')
-	  set runtimepath+=~/.vim/bundle/neobundle.vim/
-  endif
+	if &compatible
+		set nocompatible               " Be iMproved
+	endif
 
-  call neobundle#rc(expand('~/.vim/bundle/'))
-
-  filetype plugin indent on     " Required!
-
-  "Installation check.
-  if neobundle#exists_not_installed_bundles()
-  echomsg 'Not installed bundles : ' .
-             \ string(neobundle#get_not_installed_bundle_names())
-               echomsg 'Please execute ":NeoBundleInstall" command.'
-    "finish
-  endif
-"Installation check.
+	" Required:
+	set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+"
+"      " Required:
+call neobundle#begin(expand('~/.vim/bundle/'))"Installation check.
 "NeoBundleCheck
 " GitHubリポジトリにあるプラグインを利用する
 NeoBundle 'Shougo/neocomplcache'
@@ -76,6 +71,7 @@ NeoBundle 'justinmk/vim-dirvish.git'
 NeoBundle 'moll/vim-node'
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
+call neobundle#end()
 
 filetype plugin on
 filetype indent on
@@ -108,8 +104,8 @@ let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : ''
-    \ }
+			\ 'default' : ''
+			\ }
 inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"

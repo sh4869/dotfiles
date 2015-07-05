@@ -61,10 +61,6 @@ cd $1 && ls --color=auto -F
 function gi() { 
 curl -L -s https://www.gitignore.io/api/$@ 
 }
-function server(  ){
-python -m http.server  & 
-}
-
 colors() {
 	local fgc bgc vals seq0
 

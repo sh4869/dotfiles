@@ -33,7 +33,7 @@ setting_vimrc(){
 
 	echo "[NeoBundle Setting]"
 	##Setting of NeoBundle
-	
+
 	if [ ! -d ~/.vim/bundle/neobundle.vim ]
 	then
 		if type git > /dev/null
@@ -88,10 +88,42 @@ setting_bash(){
 	fi
 }
 
+setting_gitconfig(){
+	echo "[.gitconfig Setting]"
+	#Setting of .bash
+	if type git > /dev/null
+	then
+		if [ -e ~/.gitconfig ]
+		then
+			while true;do
+				echo ">> Do you remove .gitconfig and replace .gitconfig? [y/n]"
+				read answer
+				case $answer in
+					y)
+						rm ~/.gitconfig 
+						echo "Remove .gitconfig"
+						ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+						echo "And Replace .gitconfig!!"
+						break
+						;;
+					n)
+						echo "Don't remove .gitconfig"
+						break
+						;;
+					*)
+						echo "Plese input y or n"
+						;;
+				esac
+			done
+		else
+			ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+			echo "Replce .gitconfig!!"
+		fi
+	else
+		echo "Install Git"
+	fi
+}
+
 setting_vimrc
 setting_bash
-
-#rm ~/.vimrc ~/.bashrc ~/.gitconfig
-#ln -s ~/.dotfiles/.vimrc ~/.vimrc
-#ln -s ~/.dotfiles/.bashrc ~/.bashrc
-#ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+setting_gitconfig

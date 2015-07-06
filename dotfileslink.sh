@@ -120,8 +120,18 @@ setting_gitconfig(){
 	  echo "Replce .gitconfig!!"
 	fi
   else
-	echo "Install Git"
+	echo "Please Install Git"
   fi
+  
+  if type curl > /dev/null
+  then
+	  if [ ! -e ~/.git-completion.bash ]
+	  then
+	  	echo "Installing .git-completion.bash file....."
+		curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.git-completion.bash
+	    echo "DONE!"
+	  fi
+   fi
 }
 
 setting_vimrc

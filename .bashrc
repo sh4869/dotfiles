@@ -35,7 +35,7 @@ fi
 GIT_PS1_SHOWDIRTYSTATE=true
 
 #bashのプロンプトの設定
-PS1="\n\` 
+PS1="\` 
 if [ \$? = 0 ]; then 
 	echo \[\e[34m\];  
 else

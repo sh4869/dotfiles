@@ -71,6 +71,7 @@ NeoBundleLazy 'tpope/vim-haml',{'autoload':{'filetypes':['haml']}}
 NeoBundleLazy 'dart-lang/dart-vim-plugin',{'autoload':{'filetypes':['dart']}}
 NeoBundleLazy 'leafgarland/typescript-vim',{'autoload':{'filetypes':['typescript']}}
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+NeoBundleLazy 'heavenshell/vim-jsdoc',{'autoload':{'filetypes':['javascript']}}
 
 call neobundle#end()
 

@@ -91,10 +91,6 @@ au BufNewFile,BufRead *.qrc set filetype=xml
 au BufNewFile,BufRead *.cpp set filetype=cpp
 au BufNewFile *.tex 0r $HOME/.vim/template/tex.txt
 
-"Dart
-au BufNewFile pubspec.yaml 0r $HOME/.vim/template/pubspec.yaml
-
-"NeoBundleLazy
 
 "Neocomplcachelet g:acp_enableAtStartup = 0
 "" Use neocomplcache.

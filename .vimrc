@@ -69,6 +69,7 @@ NeoBundle 'JesseKPhillips/d.vim'
 NeoBundle 'cohama/agit.vim'
 NeoBundle 'justinmk/vim-dirvish.git'
 NeoBundle 'moll/vim-node'
+NeoBundle 'leafgarland/typescript-vim'
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
 call neobundle#end()

@@ -110,6 +110,9 @@ alias subl='sublime_text'
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+
 #環境変数
 PATH=$PATH:$HOME/arduino/
 PATH=$PATH:$HOME/Build/Qt/5.3/gcc/bin

@@ -125,4 +125,5 @@ augroup cpp-path
 	autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include
 augroup END
 
-
+""NERDTree
+nnoremap <silent><C-e> :NERDTreeToggle<CR>

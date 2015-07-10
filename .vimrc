@@ -49,16 +49,12 @@ NeoBundle 'mattn/gist-vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'myhere/vim-nodejs-complete'
 NeoBundle 'othree/html5.vim'
-NeoBundle 'scrooloose/nerdtree.git'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle "sudar/vim-arduino-syntax"
 NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'dart-lang/dart-vim-plugin'
 NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'peterhoeg/vim-qml'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'vim-scripts/gnuplot.vim'
-NeoBundle 'tpope/vim-haml'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'jceb/vim-hier'
@@ -69,8 +65,11 @@ NeoBundle 'JesseKPhillips/d.vim'
 NeoBundle 'cohama/agit.vim'
 NeoBundle 'justinmk/vim-dirvish.git'
 NeoBundle 'moll/vim-node'
-NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundleLazy 'peterhoeg/vim-qml',{'autoload':{'filetypes':['qml']}}
+NeoBundleLazy 'tpope/vim-haml',{'autoload':{'filetypes':['haml']}}
+NeoBundleLazy 'dart-lang/dart-vim-plugin',{'autoload':{'filetypes':['dart']}}
+NeoBundleLazy 'leafgarland/typescript-vim',{'autoload':{'filetypes':['typescript']}}
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
 call neobundle#end()

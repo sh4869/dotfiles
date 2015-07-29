@@ -116,7 +116,7 @@ eval "$(pyenv init -)"
 
 #環境変数
 PATH=$PATH:$HOME/arduino/
-PATH=$PATH:$HOME/Build/Qt/5.3/gcc/bin
+PATH=$PATH:$HOME/Build/Qt/5.5/gcc/bin
 PATH=$PATH:$HOME/Build/Qt/Tools/QtCreator/bin
 PATH=$PATH:$HOME/Build/skype-4.3.0.37
 PATH=$PATH:$HOME/.pub-cache/bin

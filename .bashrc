@@ -103,7 +103,7 @@ alias ks='ls'
 alias cd='mycd'
 alias c='clear'
 alias subl='sublime_text'
-
+alias arduino='/home/sh4869/Build/arduino-1.6.5/arduino'
 
 
 #rbenv
@@ -115,7 +115,7 @@ PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 
 #環境変数
-PATH=$PATH:$HOME/arduino/
+PATH=$PATH:$HOME/Build/arduino-1.6.5
 PATH=$PATH:$HOME/Build/Qt/5.5/gcc/bin
 PATH=$PATH:$HOME/Build/Qt/Tools/QtCreator/bin
 PATH=$PATH:$HOME/Build/skype-4.3.0.37

@@ -92,7 +92,6 @@ au BufNewFile,BufRead *.cpp set filetype=cpp
 au BufNewFile *.tex 0r $HOME/.vim/template/tex.txt
 
 
-"Neocomplcachelet g:acp_enableAtStartup = 0
 "" Use neocomplcache.
 if neobundle#tap('neocomplcache')
 	let g:neocomplcache_enable_at_startup = 1
@@ -114,13 +113,6 @@ endif
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
 let g:html_indent_inctags="html,body,head"
-
-let g:indent_guides_auto_colors=0
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_guide_size = 1
-let g:indent_guides_start_level=2
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=lightcyan
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=lightblue
 
 ""C++
 augroup cpp-path

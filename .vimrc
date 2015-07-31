@@ -127,13 +127,25 @@ augroup END
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 ""LightLine.vim
-let g:lightline = {
-			\ 'colorscheme' : 'wombat',
-			\ 'component': {
-			\   'readonly': '%{&readonly?"RO":""}',
-			\   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
-			\ },
-			\ 'separator': { 'left': "", 'right': "" },
-			\ 'subseparator': { 'left': "|", 'right': "|" }
-			\}
-set laststatus=2
+if neobundle#tap('lightline.vim')
+	let g:lightline = {
+				\ 'colorscheme' : 'wombat',
+				\ 'active': {
+				\   'left': [ [ 'mode', 'paste' ],
+				\             [ 'fugitive','readonly', 'filename', 'modified' ] ]
+				\ },
+				\ 'component_visible_condition': {
+				\   'readonly': '(&filetype!="help"&& &readonly)',
+				\   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+				\   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+				\ },
+				\ 'component': {
+				\   'readonly': '%{&readonly?"RO":""}',
+				\   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+				\   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+				\ },
+				\ 'separator': { 'left': "", 'right': "" },
+				\ 'subseparator': { 'left': "|", 'right': "|" }
+				\}
+	set laststatus=2
+endif

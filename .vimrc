@@ -1,10 +1,9 @@
 set number
-set notitle
-set nocompatible
 set title
+set nocompatible
+set ruler
 set showmatch
 set wildmenu
-set showcmd
 set noswapfile
 set smartindent
 set tabstop=4
@@ -70,6 +69,7 @@ NeoBundleLazy 'leafgarland/typescript-vim',{'autoload':{'filetypes':['typescript
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 NeoBundleLazy 'heavenshell/vim-jsdoc',{'autoload':{'filetypes':['javascript']}}
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'itchyny/lightline.vim'
 
 call neobundle#end()
 
@@ -125,3 +125,15 @@ augroup END
 
 ""NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
+""LightLine.vim
+let g:lightline = {
+			\ 'colorscheme' : 'wombat',
+			\ 'component': {
+			\   'readonly': '%{&readonly?"RO":""}',
+			\   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
+			\ },
+			\ 'separator': { 'left': "", 'right': "" },
+			\ 'subseparator': { 'left': "|", 'right': "|" }
+			\}
+set laststatus=2

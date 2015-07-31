@@ -35,9 +35,11 @@ if has('vim_starting')
 	" Required:
 	set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-"
-"      " Required:
+
 call neobundle#begin(expand('~/.vim/bundle/'))"Installation check.
+
+NeoBundleFetch "Shougo/neobundle.vim"
+
 "NeoBundleCheck
 " GitHubリポジトリにあるプラグインを利用する
 NeoBundle 'Shougo/neocomplcache'
@@ -92,23 +94,26 @@ au BufNewFile *.tex 0r $HOME/.vim/template/tex.txt
 
 "Neocomplcachelet g:acp_enableAtStartup = 0
 "" Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" " Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+if neobundle#tap('neocomplcache')
+	let g:neocomplcache_enable_at_startup = 1
+	" Use smartcase.
+	let g:neocomplcache_enable_smart_case = 1
+	" " Set minimum syntax keyword length.
+	let g:neocomplcache_min_syntax_length = 3
+	let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
-let g:neocomplcache_dictionary_filetype_lists = {
-			\ 'default' : ''
-			\ }
-inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+	let g:neocomplcache_dictionary_filetype_lists = {
+				\ 'default' : ''
+				\ }
+	inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+
+	inoremap <expr><Down> neocomplcache#close_popup() . "\<Down>"
+	inoremap <expr><Up> neocomplcache#close_popup() . "\<Up>"
+endif
+
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
 let g:html_indent_inctags="html,body,head"
-
-inoremap <expr><Down> neocomplcache#close_popup() . "\<Down>"
-inoremap <expr><Up> neocomplcache#close_popup() . "\<Up>"
 
 let g:indent_guides_auto_colors=0
 let g:indent_guides_enable_on_vim_startup=1

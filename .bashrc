@@ -1,7 +1,7 @@
 [ -z "$PS1" ] && return
 
 
-#history command setting
+# history command setting
 shopt -s histappend
 HISTSIZE=10000
 HISTFILESIZE=10000
@@ -9,12 +9,13 @@ HISTTIMEFORMAT='%y/%m/%d %H:%M:%S  '
 HISTIGNORE=ls:la:ll:lla:history
 HISTCONTROL=ignoreboth
 
-shopt -s checkwinsize #ウィンドウの大きさのチェック & LINESとCOLUMNSの大きさの変更
+# Check Window Size
+shopt -s checkwinsize 
 
-#Gitの補完用のファイルを読み込みます
+# read git completion file
 source ~/.git-completion.bash
 
-#Gitのbranchを右側に表示する
+# Display Git branch
 function length()  
 {
 	echo -n ${#1}
@@ -34,7 +35,7 @@ else
 fi
 GIT_PS1_SHOWDIRTYSTATE=true
 
-#bashのプロンプトの設定
+# bash prompt
 PS1="\` 
 if [ \$? = 0 ]; then 
 	echo \[\e[34m\];  
@@ -44,7 +45,7 @@ fi
 \`\e[47m[\u@\H:\w]\e[30;46m \t $PS1_GIT_BRANCH\[\e[0m\]\n$"
 
 
-#ターミナルのタイトルを動的に変更していく
+# terminal title
 case $TERM in
 	kterm|xterm|mlterm|cygwin|vt102)
 		_termtitle="\h:\w"
@@ -52,15 +53,18 @@ case $TERM in
 		;;
 esac
 
-
-#cdを置き換える
+## My Function
+# cd
 mycd(){
 	cd $1 && ls --color=auto -F
 }
 
+# gi ( gitignore.io command ) 
 gi() { 
 	curl -L -s https://www.gitignore.io/api/$@ 
 }
+
+# color
 colors() {
 	local fgc bgc vals seq0
 
@@ -88,7 +92,7 @@ colors() {
 	done
 }
 
-#alias settings
+#alias
 alias ls='ls -F --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
@@ -105,16 +109,16 @@ alias c='clear'
 alias subl='sublime_text'
 alias arduino='/home/sh4869/Build/arduino-1.6.5/arduino'
 
-
-#rbenv
+## Script Language Version Manager
+# rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-#pyenv
+# pyenv
 PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 
-#環境変数
+# PATH
 PATH=$PATH:$HOME/Build/arduino-1.6.5
 PATH=$PATH:$HOME/Build/Qt/5.5/gcc/bin
 PATH=$PATH:$HOME/Build/Qt/Tools/QtCreator/bin
@@ -127,6 +131,7 @@ PATH=$PATH:$HOME/Build/dart-sdk/bin
 PATH=$PATH:$HOME/Build/dub
 PATH=$PATH:$HOME/.nodebrew/current/bin
 PATH=$PATH:$HOME/Build/cmake-3.2.3-Linux-i386/bin
+
 # pkg config
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}
 

@@ -41,27 +41,20 @@ call neobundle#begin(expand('~/.vim/bundle/'))"Installation check.
 NeoBundleFetch "Shougo/neobundle.vim"
 
 "NeoBundleCheck
-" GitHubリポジトリにあるプラグインを利用する
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'marijnh/tern'
-NeoBundle 'mattn/gist-vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'myhere/vim-nodejs-complete'
 NeoBundle 'othree/html5.vim'
-NeoBundle 'thinca/vim-quickrun'
 NeoBundle "sudar/vim-arduino-syntax"
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'davidhalter/jedi-vim'
-NeoBundle 'vim-scripts/gnuplot.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'Shirk/vim-gas'
 NeoBundle 'JesseKPhillips/d.vim'
 NeoBundle 'cohama/agit.vim'
-NeoBundle 'justinmk/vim-dirvish.git'
 NeoBundle 'moll/vim-node'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundleLazy 'peterhoeg/vim-qml',{'autoload':{'filetypes':['qml']}}

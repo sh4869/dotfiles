@@ -40,31 +40,86 @@ call neobundle#begin(expand('~/.vim/bundle/'))"Installation check.
 
 NeoBundleFetch "Shougo/neobundle.vim"
 
-"NeoBundleCheck
+""" NeoBundleCheck
+
+"" Vim systems extension
+" Auto Completion Plugin 
 NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'myhere/vim-nodejs-complete'
-NeoBundle 'othree/html5.vim'
-NeoBundle "sudar/vim-arduino-syntax"
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'davidhalter/jedi-vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'Shougo/vimproc.vim'
-NeoBundle 'Shirk/vim-gas'
-NeoBundle 'JesseKPhillips/d.vim'
-NeoBundle 'cohama/agit.vim'
-NeoBundle 'moll/vim-node'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundleLazy 'peterhoeg/vim-qml',{'autoload':{'filetypes':['qml']}}
-NeoBundleLazy 'tpope/vim-haml',{'autoload':{'filetypes':['haml']}}
-NeoBundleLazy 'dart-lang/dart-vim-plugin',{'autoload':{'filetypes':['dart']}}
-NeoBundleLazy 'leafgarland/typescript-vim',{'autoload':{'filetypes':['typescript']}}
-NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
-NeoBundleLazy 'heavenshell/vim-jsdoc',{'autoload':{'filetypes':['javascript']}}
-NeoBundle 'kchmck/vim-coffee-script'
+" Statusline extension Plugin
 NeoBundle 'itchyny/lightline.vim'
+" Vim web api plugin
+NeoBundle 'mattn/webapi-vim'
+" Open URI with browser
+NeoBundle 'tyru/open-browser.vim'
+" Git wrapper
+NeoBundle 'tpope/vim-fugitive'
+" A tree explorer plugin
+NeoBundle 'scrooloose/nerdtree'
+" Git viewer for vim
+NeoBundle 'cohama/agit.vim'
+" Interactive command execution
+NeoBundle 'Shougo/vimproc.vim', {
+			\ 'build' : {
+			\     'linux' : 'make',
+			\    },
+			\ }
+
+"" Language Plugin
+" Vim plugin for Ruby
+NeoBundleLazy 'vim-ruby/vim-ruby', {
+			\ 'autoload': {'filetypes' : ["ruby"] }
+			\ }
+
+" Vim Plugin for Node and javascript
+NeoBundleLazy 'myhere/vim-nodejs-complete',{
+			\ 'autoload' : {'filetypes' : ["javascript"] }
+			\ }
+NeoBundleLazy 'moll/vim-node', {
+			\ 'autoload' : {'filetypes' : ["javascript"] }
+			\ }
+NeoBundleLazy 'heavenshell/vim-jsdoc',{
+			\ 'autoload':{'filetypes':['javascript']}
+			\ }
+
+" Vim Plugin for html
+NeoBundleLazy 'othree/html5.vim', {
+			\ 'autoload': {'filetypes' : ['html'] }
+			\ }
+
+"Vim Plugin for arduino
+NeoBundleLazy "sudar/vim-arduino-syntax",{
+			\ 'autoload' : {'filetypes' : ['arduino'] }
+			\ }
+
+"Vim Plugin for css
+NeoBundleLazy 'hail2u/vim-css3-syntax', {
+			\ 'autoload' : {'filetypes' : ['css'] }
+			\ }
+
+" Vim plugin for dlang
+NeoBundleLazy 'JesseKPhillips/d.vim', {
+			\ 'autoload' : {'filetypes' : ['d'] }
+			\ }
+
+" Vim Plugin for coffee
+NeoBundleLazy 'kchmck/vim-coffee-script' ,{
+			\ 'autoload' : {'filetypes' : ['coffee'] }
+			\ }
+
+" Vim Plugin for haml
+NeoBundleLazy 'tpope/vim-haml',{
+			\ 'autoload':{'filetypes':['haml']}
+			\ }
+
+" Vim Plugin for Dart
+NeoBundleLazy 'dart-lang/dart-vim-plugin',{
+			\ 'autoload':{'filetypes':['dart']}
+			\ }
+
+" Vim Plugin for Typescript
+NeoBundleLazy 'leafgarland/typescript-vim',{
+			\ 'autoload':{'filetypes':['typescript']}
+			\ }
 
 call neobundle#end()
 
@@ -80,6 +135,7 @@ au BufNewFile,BufRead *.tex set filetype=tex
 au BufNewFile,BufRead *.qml set filetype=qml
 au BufNewFile,BufRead *.qrc set filetype=xml
 au BufNewFile,BufRead *.cpp set filetype=cpp
+au BufNewFile,BufRead *.d set filetype=d
 au BufNewFile *.tex 0r $HOME/.vim/template/tex.txt
 
 

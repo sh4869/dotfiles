@@ -71,8 +71,6 @@ call neobundle#end()
 filetype plugin on
 filetype indent on
 
-let g:uer_emmet_settings = {'lang' : 'ja'}
-
 "File set
 au BufNewFile,BufRead *.ino set filetype=arduino
 au BufNewFile,BufRead *.kn	set filetype=kuin
@@ -102,10 +100,6 @@ if neobundle#tap('neocomplcache')
 	inoremap <expr><Down> neocomplcache#close_popup() . "\<Down>"
 	inoremap <expr><Up> neocomplcache#close_popup() . "\<Up>"
 endif
-
-let g:html_indent_script1="inc"
-let g:html_indent_style1="inc"
-let g:html_indent_inctags="html,body,head"
 
 ""C++
 augroup cpp-path

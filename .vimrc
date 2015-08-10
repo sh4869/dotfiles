@@ -115,6 +115,9 @@ NeoBundleLazy 'tpope/vim-haml',{
 NeoBundleLazy 'dart-lang/dart-vim-plugin',{
 			\ 'autoload':{'filetypes':['dart']}
 			\ }
+NeoBundleLazy 'miyakogi/vim-dartanalyzer',{
+			\ 'autoload' : {'filetypes':['dart']}
+			\ }
 
 " Vim Plugin for Typescript
 NeoBundleLazy 'leafgarland/typescript-vim',{
@@ -188,4 +191,8 @@ if neobundle#tap('lightline.vim')
 				\ 'subseparator': { 'left': "|", 'right': "|" }
 				\}
 	set laststatus=2
+endif
+
+if neobundle#tap('vim-dartanalyzer')
+	let g:dartanalyzer_disable_autostart = 1
 endif

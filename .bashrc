@@ -111,13 +111,18 @@ alias arduino='/home/sh4869/Build/arduino-1.6.5/arduino'
 
 ## Script Language Version Manager
 # rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if [ -d ~/.rbenv/ ]
+then
+	export PATH="$HOME/.rbenv/bin:$PATH"
+	eval "$(rbenv init -)"
+fi
 
 # pyenv
-PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-
+if [ -d ~/.pyenv/ ]
+then
+	PATH="$HOME/.pyenv/bin:$PATH"
+	eval "$(pyenv init -)"
+fi
 # PATH
 PATH=$PATH:$HOME/Build/arduino-1.6.5
 PATH=$PATH:$HOME/Build/Qt/5.5/gcc/bin

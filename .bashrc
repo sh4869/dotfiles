@@ -135,11 +135,13 @@ PATH=$PATH:$HOME/Build/cmake-3.2.3-Linux-i386/bin
 # pkg config
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}
 
-# The next line updates PATH for the Google Cloud SDK.
-source '/home/sh4869/google-cloud-sdk/path.bash.inc'
+if [ -d ~/google-cloud-sdk/ ]
+then
+	# The next line updates PATH for the Google Cloud SDK.
+	source '/home/sh4869/google-cloud-sdk/path.bash.inc'
 
-# The next line enables bash completion for gcloud.
-source '/home/sh4869/google-cloud-sdk/completion.bash.inc'
-
+	# The next line enables bash completion for gcloud.
+	source '/home/sh4869/google-cloud-sdk/completion.bash.inc'
+fi
 # added by travis gem
 [ -f /home/sh4869/.travis/travis.sh ] && source /home/sh4869/.travis/travis.sh

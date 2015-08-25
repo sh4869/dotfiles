@@ -16,12 +16,12 @@ shopt -s checkwinsize
 source ~/.git-completion.bash
 
 # Display Git branch
-function length()  
+length()  
 {
 	echo -n ${#1}
 }
 
-function init-prompt-git-branch()
+init-prompt-git-branch()
 {
 	git symbolic-ref HEAD 2>/dev/null >/dev/null &&
 		echo "($(git symbolic-ref HEAD 2>/dev/null | sed 's/^refs\/heads\///'))"

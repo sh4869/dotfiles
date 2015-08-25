@@ -9,7 +9,7 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set clipboard=unnamed,autoselect
-set synmaxcol=120
+set synmaxcol=150
 syntax on
 set mouse=a
 set modifiable
@@ -36,7 +36,7 @@ if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))"Installation check.
+call neobundle#begin(expand('~/.vim/bundle/')) "Installation check.
 
 NeoBundleFetch "Shougo/neobundle.vim"
 

@@ -150,3 +150,5 @@ then
 fi
 # added by travis gem
 [ -f /home/sh4869/.travis/travis.sh ] && source /home/sh4869/.travis/travis.sh
+
+[ -f ~/.bash_profile ] && source ~/.bash_profile

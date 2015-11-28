@@ -107,48 +107,9 @@ alias ks='ls'
 alias cd='mycd'
 alias c='clear'
 alias subl='sublime_text'
-alias arduino='/home/sh4869/Build/arduino-1.6.5/arduino'
-
-## Script Language Version Manager
-# rbenv
-if [ -d ~/.rbenv/ ]
-then
-	export PATH="$HOME/.rbenv/bin:$PATH"
-	eval "$(rbenv init -)"
-fi
-
-# pyenv
-if [ -d ~/.pyenv/ ]
-then
-	PATH="$HOME/.pyenv/bin:$PATH"
-	eval "$(pyenv init -)"
-fi
-# PATH
-PATH=$PATH:$HOME/Build/arduino-1.6.5
-PATH=$PATH:$HOME/Build/Qt/5.5/gcc/bin
-PATH=$PATH:$HOME/Build/Qt/Tools/QtCreator/bin
-PATH=$PATH:$HOME/Build/skype-4.3.0.37
-PATH=$PATH:$HOME/.pub-cache/bin
-PATH=$PATH:$HOME/.vim/script
-PATH=$PATH:$HOME/Build/dmd2/linux/bin32
-PATH=$PATH:$HOME/Build/sublime_text_3
-PATH=$PATH:$HOME/Build/dart-sdk/bin
-PATH=$PATH:$HOME/Build/dub
-PATH=$PATH:$HOME/.nodebrew/current/bin
-PATH=$PATH:$HOME/Build/cmake-3.2.3-Linux-i386/bin
 
 # pkg config
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}
 
-if [ -d ~/google-cloud-sdk/ ]
-then
-	# The next line updates PATH for the Google Cloud SDK.
-	source '/home/sh4869/google-cloud-sdk/path.bash.inc'
-
-	# The next line enables bash completion for gcloud.
-	source '/home/sh4869/google-cloud-sdk/completion.bash.inc'
-fi
-# added by travis gem
-[ -f /home/sh4869/.travis/travis.sh ] && source /home/sh4869/.travis/travis.sh
-
+# read local setting
 [ -f ~/.bash_profile ] && source ~/.bash_profile

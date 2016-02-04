@@ -51,6 +51,8 @@ NeoBundleFetch "Shougo/neobundle.vim"
 "" Vim systems extension
 " Auto Completion Plugin 
 NeoBundle 'Shougo/neocomplcache'
+" User Interface
+NeoBundle 'Shougo/unite.vim'
 " Statusline extension Plugin
 NeoBundle 'itchyny/lightline.vim'
 " Vim web api plugin
@@ -71,6 +73,8 @@ NeoBundle 'Shougo/vimproc.vim', {
 			\ }
 " EditorConfig File Plugin
 NeoBundle 'editorconfig/editorconfig-vim'
+" Vim Outliner
+NeoBundle 'vim-voom/VOoM'
 "" Language Plugin
 " Vim plugin for Ruby
 NeoBundleLazy 'vim-ruby/vim-ruby', {

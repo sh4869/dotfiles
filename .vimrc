@@ -1,16 +1,22 @@
+" Normal Setting
 set number
 set title
 set nocompatible
 set ruler
 set showmatch
+set matchtime=1
 set wildmenu
+set display=lastline
+set wrap
 set noswapfile
 set smartindent
 set tabstop=4
 set shiftwidth=4
 set clipboard=unnamed,autoselect
 set synmaxcol=150
+
 syntax on
+
 set mouse=a
 set modifiable
 set fileencoding=utf-8

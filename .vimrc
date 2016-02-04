@@ -141,7 +141,6 @@ au BufNewFile,BufRead *.qrc set filetype=xml
 au BufNewFile,BufRead *.cpp set filetype=cpp
 au BufNewFile,BufRead *.d set filetype=d
 au BufNewFile,BufRead *.coffee set filetype=coffee
-au BufNewFile *.tex 0r $HOME/.vim/template/tex.txt
 
 
 "" Use neocomplcache.

@@ -14,6 +14,8 @@ set tabstop=4
 set shiftwidth=4
 set clipboard=unnamed,autoselect
 set synmaxcol=150
+set scrolloff=5
+set cursorline
 
 syntax on
 
@@ -29,7 +31,14 @@ set t_Co=256
 set background=dark
 highlight Normal ctermbg=none
 
-"---neobundle--"
+" Key bind
+inoremap <silent> jj <ESC>
+
+" 全角スペース
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
+au BufNewFile,BufRead * match ZenkakuSpace /　/
+
+" Neobundle
 
 if 0 | endif
 
@@ -75,6 +84,10 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle 'editorconfig/editorconfig-vim'
 " Vim Outliner
 NeoBundle 'vim-voom/VOoM'
+" Japanese Format
+NeoBundle 'fuenor/JpFormat.vim'
+" Gist Plugin
+NeoBundle 'mattn/gist-vim'
 "" Language Plugin
 " Vim plugin for Ruby
 NeoBundleLazy 'vim-ruby/vim-ruby', {

@@ -139,9 +139,6 @@ NeoBundleLazy 'tpope/vim-haml',{
 NeoBundleLazy 'dart-lang/dart-vim-plugin',{
 			\ 'autoload':{'filetypes':['dart']}
 			\ }
-NeoBundleLazy 'miyakogi/vim-dartanalyzer',{
-			\ 'autoload' : {'filetypes':['dart']}
-			\ }
 
 " Vim Plugin for Typescript
 NeoBundleLazy 'leafgarland/typescript-vim',{

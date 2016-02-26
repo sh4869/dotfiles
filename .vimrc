@@ -214,6 +214,3 @@ if neobundle#tap('lightline.vim')
 	set laststatus=2
 endif
 
-if neobundle#tap('vim-dartanalyzer')
-	let g:dartanalyzer_disable_autostart = 1
-endif

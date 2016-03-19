@@ -145,6 +145,10 @@ NeoBundleLazy 'leafgarland/typescript-vim',{
 			\ 'autoload':{'filetypes':['typescript']}
 			\ }
 
+NeoBundleLazy 'rhysd/vim-crystal',{
+			\ 'autoload':{'filetypes':['crystal']}
+			\ }
+
 call neobundle#end()
 
 filetype plugin on
@@ -161,6 +165,7 @@ au BufNewFile,BufRead *.qrc set filetype=xml
 au BufNewFile,BufRead *.cpp set filetype=cpp
 au BufNewFile,BufRead *.d set filetype=d
 au BufNewFile,BufRead *.coffee set filetype=coffee
+au BufNewFile,BufRead *.cr set filetype=crystal
 
 
 "" Use neocomplcache.

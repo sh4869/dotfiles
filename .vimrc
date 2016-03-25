@@ -10,8 +10,8 @@ set display=lastline
 set wrap
 set noswapfile
 set smartindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set clipboard=unnamed,autoselect
 set synmaxcol=150
 set scrolloff=5

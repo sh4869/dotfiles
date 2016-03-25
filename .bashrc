@@ -1,6 +1,5 @@
 [ -z "$PS1" ] && return
 
-
 # history command setting
 shopt -s histappend
 HISTSIZE=10000
@@ -14,26 +13,7 @@ shopt -s checkwinsize
 
 # read git completion file
 source ~/.git-completion.bash
-
-# Display Git branch
-length()  
-{
-	echo -n ${#1}
-}
-
-init-prompt-git-branch()
-{
-	git symbolic-ref HEAD 2>/dev/null >/dev/null &&
-		echo "($(git symbolic-ref HEAD 2>/dev/null | sed 's/^refs\/heads\///'))"
-}
-
-if which git 2>/dev/null >/dev/null
-then
-	export PS1_GIT_BRANCH='\[\e[$[COLUMNS]D\]\[\e[30m\]\[\e[$[COLUMNS-$(length $(init-prompt-git-branch))]C\]$(init-prompt-git-branch)\[\e[$[COLUMNS]D\]\[\e[0m\]'
-else
-	export PS1_GIT_BRANCH=
-fi
-GIT_PS1_SHOWDIRTYSTATE=true
+source ~/.git-prompt.sh
 
 # bash prompt
 PS1="\` 
@@ -42,8 +22,12 @@ if [ \$? = 0 ]; then
 else
 	echo \[\e[31m\]; 
 fi
-\`\e[47m[\u@\H:\w]\e[30;46m \t $PS1_GIT_BRANCH\[\e[0m\]\n$"
+\`\e[47m[\u@\H:\w]\e[30;46m \t $(__git_ps1) \[\e[0m\]\n$"
 
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUPSTREAM=auto
 
 # terminal title
 case $TERM in
@@ -113,3 +97,6 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}
 
 # read local setting
 [ -f ~/.bash_profile ] && source ~/.bash_profile
+
+export NVM_DIR="/home/sh4869/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

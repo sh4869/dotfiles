@@ -42,7 +42,7 @@ if [ \$? = 0 ]; then
 else
 	echo \[\e[31m\]; 
 fi
-\`\e[47m[\u@\H:\w]\e[30;46m \t $PS1_GIT_BRANCH \[\e[0m\]\n$"
+\`\e[47m[\u@\H:\w]\e[30;46m \t$PS1_GIT_BRANCH \[\e[0m\]\n$"
 
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
@@ -118,5 +118,3 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}
 # read local setting
 [ -f ~/.bash_profile ] && source ~/.bash_profile
 
-export NVM_DIR="/home/sh4869/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

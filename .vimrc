@@ -10,6 +10,7 @@ set display=lastline
 set wrap
 set noswapfile
 set smartindent
+set expandtab
 set tabstop=2
 set shiftwidth=2
 set clipboard=unnamed,autoselect
@@ -148,6 +149,12 @@ NeoBundleLazy 'leafgarland/typescript-vim',{
 NeoBundleLazy 'rhysd/vim-crystal',{
 			\ 'autoload':{'filetypes':['crystal']}
 			\ }
+NeoBundleLazy 'othree/yajs.vim', {
+			\ 'autoload':{'filetypes':['javascript']}
+			\ }
+NeoBundleLazy 'raicho/haskell-vim',{
+      \ 'autoload':{'filetypes':['haskell']}
+      \ }
 
 call neobundle#end()
 
@@ -166,6 +173,7 @@ au BufNewFile,BufRead *.cpp set filetype=cpp
 au BufNewFile,BufRead *.d set filetype=d
 au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead *.cr set filetype=crystal
+au BufNewFile,BufRead *.hs set filetype=haskell
 
 
 "" Use neocomplcache.

@@ -1,0 +1,37 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# User Inter Face #
+## Statusline extension Plugin
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+## A tree explorer
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+# Utility #
+## Vim Web API Plugins
+[[plugins]]
+repo = 'mattn/webapi-vim'
+
+## Open URI with browser
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+# Command and General Text #
+## Git wrapper
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+## Git Viewer
+[[plugins]] 
+repo = 'cohama/agit.vim'
+
+## Editor Config
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+## Gist Plugin
+[[plugins]]
+repo = 'mattn/gist-vim'

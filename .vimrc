@@ -2,14 +2,12 @@
 set number
 set title
 set nocompatible
-set nobackup
 set ruler
 set showmatch
 set matchtime=1
 set wildmenu
 set display=lastline
 set wrap
-set noswapfile
 set smartindent
 set expandtab
 set tabstop=2
@@ -17,6 +15,11 @@ set shiftwidth=2
 set clipboard=unnamed,autoselect
 set synmaxcol=150
 set scrolloff=5
+
+" BackUp File
+set noswapfile
+set nobackup
+set noundofile
 
 syntax on
 
@@ -42,128 +45,6 @@ inoremap <silent> jj <ESC>
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
 au BufNewFile,BufRead * match ZenkakuSpace /　/
 
-" Neobundle
-
-if 0 | endif
-
-if has('vim_starting')
-	if &compatible
-		set nocompatible               " Be iMproved
-	endif
-
-	" Required:
-	set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-call neobundle#begin(expand('~/.vim/bundle/')) "Installation check.
-
-NeoBundleFetch "Shougo/neobundle.vim"
-
-""" NeoBundleCheck
-
-"" Vim systems extension
-" Auto Completion Plugin 
-NeoBundle 'Shougo/neocomplcache'
-" User Interface
-NeoBundle 'Shougo/unite.vim'
-" Statusline extension Plugin
-NeoBundle 'itchyny/lightline.vim'
-" Vim web api plugin
-NeoBundle 'mattn/webapi-vim'
-" Open URI with browser
-NeoBundle 'tyru/open-browser.vim'
-" Git wrapper
-NeoBundle 'tpope/vim-fugitive'
-" A tree explorer plugin
-NeoBundle 'scrooloose/nerdtree'
-" Git viewer for vim
-NeoBundle 'cohama/agit.vim'
-" Interactive command execution
-NeoBundle 'Shougo/vimproc.vim', {
-			\ 'build' : {
-			\     'linux' : 'make',
-			\    },
-			\ }
-" EditorConfig File Plugin
-NeoBundle 'editorconfig/editorconfig-vim'
-" Vim Outliner
-NeoBundle 'vim-voom/VOoM'
-" Japanese Format
-NeoBundle 'fuenor/JpFormat.vim'
-" Gist Plugin
-NeoBundle 'mattn/gist-vim'
-"" Language Plugin
-" Vim plugin for Ruby
-NeoBundleLazy 'vim-ruby/vim-ruby', {
-			\ 'autoload': {'filetypes' : ["ruby"] }
-			\ }
-
-" Vim Plugin for Node and javascript
-NeoBundleLazy 'myhere/vim-nodejs-complete',{
-			\ 'autoload' : {'filetypes' : ["javascript"] }
-			\ }
-NeoBundleLazy 'moll/vim-node', {
-			\ 'autoload' : {'filetypes' : ["javascript"] }
-			\ }
-NeoBundleLazy 'heavenshell/vim-jsdoc',{
-			\ 'autoload':{'filetypes':['javascript']}
-			\ }
-
-" Vim Plugin for html
-NeoBundleLazy 'othree/html5.vim', {
-			\ 'autoload': {'filetypes' : ['html'] }
-			\ }
-
-"Vim Plugin for arduino
-NeoBundleLazy "sudar/vim-arduino-syntax",{
-			\ 'autoload' : {'filetypes' : ['arduino'] }
-			\ }
-
-"Vim Plugin for css
-NeoBundleLazy 'hail2u/vim-css3-syntax', {
-			\ 'autoload' : {'filetypes' : ['css'] }
-			\ }
-
-" Vim plugin for dlang
-NeoBundleLazy 'JesseKPhillips/d.vim', {
-			\ 'autoload' : {'filetypes' : ['d'] }
-			\ }
-
-" Vim Plugin for coffee
-NeoBundleLazy 'kchmck/vim-coffee-script' ,{
-			\ 'autoload' : {'filetypes' : ['coffee'] }
-			\ }
-
-" Vim Plugin for haml
-NeoBundleLazy 'tpope/vim-haml',{
-			\ 'autoload':{'filetypes':['haml']}
-			\ }
-
-" Vim Plugin for Dart
-NeoBundleLazy 'dart-lang/dart-vim-plugin',{
-			\ 'autoload':{'filetypes':['dart']}
-			\ }
-
-" Vim Plugin for Typescript
-NeoBundleLazy 'leafgarland/typescript-vim',{
-			\ 'autoload':{'filetypes':['typescript']}
-			\ }
-
-NeoBundleLazy 'rhysd/vim-crystal',{
-			\ 'autoload':{'filetypes':['crystal']}
-			\ }
-NeoBundleLazy 'othree/yajs.vim', {
-			\ 'autoload':{'filetypes':['javascript']}
-			\ }
-NeoBundleLazy 'raicho/haskell-vim',{
-      \ 'autoload':{'filetypes':['haskell']}
-      \ }
-
-call neobundle#end()
-
-filetype plugin on
-filetype indent on
-
 "File set
 au BufNewFile,BufRead *.ino set filetype=arduino
 au BufNewFile,BufRead *.kn	set filetype=kuin
@@ -178,55 +59,82 @@ au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead *.cr set filetype=crystal
 au BufNewFile,BufRead *.hs set filetype=haskell
 
-
-"" Use neocomplcache.
-if neobundle#tap('neocomplcache')
-	let g:neocomplcache_enable_at_startup = 1
-	" Use smartcase.
-	let g:neocomplcache_enable_smart_case = 1
-	" " Set minimum syntax keyword length.
-	let g:neocomplcache_min_syntax_length = 3
-	let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
-	let g:neocomplcache_dictionary_filetype_lists = {
-				\ 'default' : ''
-				\ }
-	inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-
-	inoremap <expr><Down> neocomplcache#close_popup() . "\<Down>"
-	inoremap <expr><Up> neocomplcache#close_popup() . "\<Up>"
-endif
-
 ""C++
 augroup cpp-path
-	autocmd!
-	autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include
+  autocmd!
+  autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include
 augroup END
 
 ""NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
-""LightLine.vim
-if neobundle#tap('lightline.vim')
-	let g:lightline = {
-				\ 'colorscheme' : 'wombat',
-				\ 'active': {
-				\   'left': [ [ 'mode', 'paste' ],
-				\             [ 'fugitive','readonly', 'filename', 'modified' ] ]
-				\ },
-				\ 'component_visible_condition': {
-				\   'readonly': '(&filetype!="help"&& &readonly)',
-				\   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-				\   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-				\ },
-				\ 'component': {
-				\   'readonly': '%{&readonly?"RO":""}',
-				\   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-				\   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-				\ },
-				\ 'separator': { 'left': "", 'right': "" },
-				\ 'subseparator': { 'left': "|", 'right': "|" }
-				\}
-	set laststatus=2
+"------------------- dein.vim ------------------------"
+
+if &compatible
+  set nocompatible
+endif
+let s:dein_dir = expand('~/.cache/dein')
+" dein.vim 本体
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . s:dein_repo_dir
 endif
 
+" 設定開始
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+
+  " プラグインリストを収めた TOML ファイル
+  " 予め TOML ファイル（後述）を用意しておく
+  let g:rc_dir    = expand('~/.vim/rc')
+  let s:toml      = g:rc_dir . '/dein.toml'
+  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+
+  " TOML を読み込み、キャッシュしておく
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+
+  " 設定終了
+  call dein#end()
+  call dein#save_state()
+endif
+
+" もし、未インストールものものがあったらインストール
+if dein#check_install()
+  call dein#install()
+endif
+
+if dein#tap('lightline.vim')
+  let g:lightline = {
+        \ 'colorscheme' : 'wombat',
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'fugitive','readonly', 'filename', 'modified' ] ]
+        \ },
+        \ 'component_visible_condition': {
+        \   'readonly': '(&filetype!="help"&& &readonly)',
+        \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+        \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+        \ },
+        \ 'component': {
+        \   'readonly': '%{&readonly?"RO":""}',
+        \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+        \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+        \ },
+        \ 'separator': { 'left': "", 'right': "" },
+        \ 'subseparator': { 'left': "|", 'right': "|" }
+        \}
+  set laststatus=2
+endif
+
+if dein#tap('neocomplete.vim')
+  let g:neocomplete#enable_at_startup = 1
+endif
+
+filetype plugin on
+filetype indent on
+syntax enable

@@ -1,16 +1,25 @@
+" Normal Setting
 set number
 set title
 set nocompatible
 set ruler
 set showmatch
+set matchtime=1
 set wildmenu
+set display=lastline
+set wrap
 set noswapfile
 set smartindent
-set tabstop=4
-set shiftwidth=4
+set expandtab
+set tabstop=2
+set shiftwidth=2
 set clipboard=unnamed,autoselect
 set synmaxcol=150
+set scrolloff=5
+set cursorline
+
 syntax on
+
 set mouse=a
 set modifiable
 set fileencoding=utf-8
@@ -23,7 +32,14 @@ set t_Co=256
 set background=dark
 highlight Normal ctermbg=none
 
-"---neobundle--"
+" Key bind
+inoremap <silent> jj <ESC>
+
+" 全角スペース
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
+au BufNewFile,BufRead * match ZenkakuSpace /　/
+
+" Neobundle
 
 if 0 | endif
 
@@ -45,6 +61,8 @@ NeoBundleFetch "Shougo/neobundle.vim"
 "" Vim systems extension
 " Auto Completion Plugin 
 NeoBundle 'Shougo/neocomplcache'
+" User Interface
+NeoBundle 'Shougo/unite.vim'
 " Statusline extension Plugin
 NeoBundle 'itchyny/lightline.vim'
 " Vim web api plugin
@@ -65,6 +83,12 @@ NeoBundle 'Shougo/vimproc.vim', {
 			\ }
 " EditorConfig File Plugin
 NeoBundle 'editorconfig/editorconfig-vim'
+" Vim Outliner
+NeoBundle 'vim-voom/VOoM'
+" Japanese Format
+NeoBundle 'fuenor/JpFormat.vim'
+" Gist Plugin
+NeoBundle 'mattn/gist-vim'
 "" Language Plugin
 " Vim plugin for Ruby
 NeoBundleLazy 'vim-ruby/vim-ruby', {
@@ -116,14 +140,21 @@ NeoBundleLazy 'tpope/vim-haml',{
 NeoBundleLazy 'dart-lang/dart-vim-plugin',{
 			\ 'autoload':{'filetypes':['dart']}
 			\ }
-NeoBundleLazy 'miyakogi/vim-dartanalyzer',{
-			\ 'autoload' : {'filetypes':['dart']}
-			\ }
 
 " Vim Plugin for Typescript
 NeoBundleLazy 'leafgarland/typescript-vim',{
 			\ 'autoload':{'filetypes':['typescript']}
 			\ }
+
+NeoBundleLazy 'rhysd/vim-crystal',{
+			\ 'autoload':{'filetypes':['crystal']}
+			\ }
+NeoBundleLazy 'othree/yajs.vim', {
+			\ 'autoload':{'filetypes':['javascript']}
+			\ }
+NeoBundleLazy 'raicho/haskell-vim',{
+      \ 'autoload':{'filetypes':['haskell']}
+      \ }
 
 call neobundle#end()
 
@@ -141,7 +172,8 @@ au BufNewFile,BufRead *.qrc set filetype=xml
 au BufNewFile,BufRead *.cpp set filetype=cpp
 au BufNewFile,BufRead *.d set filetype=d
 au BufNewFile,BufRead *.coffee set filetype=coffee
-au BufNewFile *.tex 0r $HOME/.vim/template/tex.txt
+au BufNewFile,BufRead *.cr set filetype=crystal
+au BufNewFile,BufRead *.hs set filetype=haskell
 
 
 "" Use neocomplcache.
@@ -195,6 +227,3 @@ if neobundle#tap('lightline.vim')
 	set laststatus=2
 endif
 
-if neobundle#tap('vim-dartanalyzer')
-	let g:dartanalyzer_disable_autostart = 1
-endif

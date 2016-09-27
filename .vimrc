@@ -45,9 +45,6 @@ inoremap <silent> jj <ESC>
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
 au BufNewFile,BufRead * match ZenkakuSpace /　/
 
-filetype plugin on
-filetype indent on
-
 "File set
 au BufNewFile,BufRead *.ino set filetype=arduino
 au BufNewFile,BufRead *.kn	set filetype=kuin
@@ -64,23 +61,27 @@ au BufNewFile,BufRead *.hs set filetype=haskell
 
 ""C++
 augroup cpp-path
-	autocmd!
-	autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include
+  autocmd!
+  autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include
 augroup END
 
 ""NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
+"------------------- dein.vim ------------------------"
+
+if &compatible
+  set nocompatible
+endif
 let s:dein_dir = expand('~/.cache/dein')
 " dein.vim 本体
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-" dein.vim がなければ github から落としてくる
 if &runtimepath !~# '/dein.vim'
   if !isdirectory(s:dein_repo_dir)
     execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
   endif
-  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+  execute 'set runtimepath^=' . s:dein_repo_dir
 endif
 
 " 設定開始
@@ -106,3 +107,30 @@ endif
 if dein#check_install()
   call dein#install()
 endif
+
+if dein#tap('lightline.vim')
+  let g:lightline = {
+        \ 'colorscheme' : 'wombat',
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'fugitive','readonly', 'filename', 'modified' ] ]
+        \ },
+        \ 'component_visible_condition': {
+        \   'readonly': '(&filetype!="help"&& &readonly)',
+        \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+        \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+        \ },
+        \ 'component': {
+        \   'readonly': '%{&readonly?"RO":""}',
+        \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+        \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+        \ },
+        \ 'separator': { 'left': "", 'right': "" },
+        \ 'subseparator': { 'left': "|", 'right': "|" }
+        \}
+  set laststatus=2
+endif
+
+filetype plugin on
+filetype indent on
+syntax enable

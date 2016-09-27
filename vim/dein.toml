@@ -1,2 +1,22 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
+
+# User Inter Face #
+## Statusline extension Plugin
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+## A tree explorer
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+# Utility #
+## Vim Web API Plugins
+[[plugins]]
+repo = 'mattn/webapi-vim'
+
+## Open URI with browser
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+

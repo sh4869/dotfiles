@@ -2,6 +2,7 @@
 set number
 set title
 set nocompatible
+set nobackup
 set ruler
 set showmatch
 set matchtime=1
@@ -16,7 +17,6 @@ set shiftwidth=2
 set clipboard=unnamed,autoselect
 set synmaxcol=150
 set scrolloff=5
-set cursorline
 
 syntax on
 
@@ -27,7 +27,10 @@ setlocal formatoptions-=r
 setlocal formatoptions-=o
 autocmd FileType * setlocal formatoptions-=ro
 
-colorscheme molokai
+if has('win32')
+else 
+  colorscheme molokai
+endif
 set t_Co=256
 set background=dark
 highlight Normal ctermbg=none

@@ -131,6 +131,10 @@ if dein#tap('lightline.vim')
   set laststatus=2
 endif
 
+if dein#tap('neocomplete.vim')
+  let g:neocomplete#enable_at_startup = 1
+endif
+
 filetype plugin on
 filetype indent on
 syntax enable

@@ -13,7 +13,7 @@ setting_vimrc(){
 		y)
 		  rm ~/.vimrc 
 		  echo "Remove .vimrc"
-		  ln -s ~/.dotfiles/.vimrc ~/.vimrc
+		  ln -s ~/dotfiles/.vimrc ~/.vimrc
 		  echo "And Replace .vimrc!!"
 		  break
 		  ;;
@@ -27,34 +27,12 @@ setting_vimrc(){
 	  esac
 	done
   else
-	ln -s ~/.dotfiles/.vimrc ~/.vimrc
+	ln -s ~/dotfiles/.vimrc ~/.vimrc
 	echo "Replce .vimrc!!"
   fi
+  ln -s ~/dotfiles/vim/dein.toml ~/.vim/rc/dein.toml
+  ln -s ~/dotfiles/vim/dein_lazy.toml ~/.vim/rc/dein_lazy.toml
 
-  echo "[NeoBundle Setting]"
-  ##Setting of NeoBundle
-
-  if [ ! -d ~/.vim/bundle/neobundle.vim ]
-  then
-	if type git > /dev/null
-	then 
-	  #SetUp Neobundle
-	  echo "Installing NeoBundle....."	
-	  mkdir -p ~/.vim/bundle
-	  git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-
-	  #Change mode of ~/.vim
-	  chmod +r -R ~/.vim/
-	  chmod +w -R ~/.vim/
-
-	  echo "Install Neobundle.vim"
-	  echo "And Change mode ~/.vim dir"
-	else
-	  echo "Please Install Git for setting Neobundle"
-	fi	
-  else
-	echo  "Neobundle Alredy Exists"
-  fi
 }
 
 setting_bash(){
@@ -69,7 +47,7 @@ setting_bash(){
 		y)
 		  rm ~/.bashrc 
 		  echo "Remove .bashrc"
-		  ln -s ~/.dotfiles/.bashrc ~/.bashrc
+		  ln -s ~/dotfiles/.bashrc ~/.bashrc
 		  echo "And Replace .bashrc!!"
 		  break
 		  ;;
@@ -83,7 +61,7 @@ setting_bash(){
 	  esac
 	done
   else
-	ln -s ~/.dotfiles/.bashrc ~/.bashrc
+	ln -s ~/dotfiles/.bashrc ~/.bashrc
 	echo "Replce .bashrc!!"
   fi
 }
@@ -102,7 +80,7 @@ setting_gitconfig(){
 		  y)
 			rm ~/.gitconfig 
 			echo "Remove .gitconfig"
-			ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+			ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 			echo "And Replace .gitconfig!!"
 			break
 			;;
@@ -116,7 +94,7 @@ setting_gitconfig(){
 		esac
 	  done
 	else
-	  ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+	  ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 	  echo "Replce .gitconfig!!"
 	fi
   else

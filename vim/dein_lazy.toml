@@ -27,3 +27,7 @@ on_ft = ['d']
 repo = 'rhysd/vim-crystal'
 on_ft = ['crystal']
 
+## LaTeX Plugin
+[[plugin]]
+repo = 'lervag/vimtex'
+on_ft = ['tex']

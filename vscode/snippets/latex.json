@@ -61,5 +61,16 @@
             "\t\\end{array}",
         	"\\right)"
 		]
+	},
+	"Table": {
+		"prefix": "table",
+		"body":[
+			"\\begin{table}[h]",
+			"\t\\centering",
+			"\t\\begin{tabular}{$1}",
+			"\t\t",
+			"\t\\end{tabular}",
+			"\\end{table}"
+		]
 	}
 }

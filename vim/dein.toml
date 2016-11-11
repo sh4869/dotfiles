@@ -1,6 +1,26 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+# Compete 
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+on_i = 1
+
+[[plugins]] 
+repo = 'Shougo/neco-vim' 
+on_ft = 'vim'
+
+[[plugins]]
+repo = 'Shougo/neco-syntax'
+on_i = 1
 # User Inter Face #
 ## Statusline extension Plugin
 [[plugins]]
@@ -35,3 +55,7 @@ repo = 'editorconfig/editorconfig-vim'
 ## Gist Plugin
 [[plugins]]
 repo = 'mattn/gist-vim'
+
+## Unite Interface
+[[plugins]]
+repo = 'Shougo/unite.vim'

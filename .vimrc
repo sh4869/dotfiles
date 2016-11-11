@@ -40,12 +40,15 @@ highlight Normal ctermbg=none
 
 " Key bind
 inoremap <silent> jj <ESC>
+"" for window
+nnoremap sw <C-w>w
 
 " 全角スペース
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
 au BufNewFile,BufRead * match ZenkakuSpace /　/
 
 "File set
+au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead *.ino set filetype=arduino
 au BufNewFile,BufRead *.kn	set filetype=kuin
 au BufNewFile,BufRead *.md  set filetype=markdown
@@ -58,6 +61,7 @@ au BufNewFile,BufRead *.d set filetype=d
 au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead *.cr set filetype=crystal
 au BufNewFile,BufRead *.hs set filetype=haskell
+au BufNewFile,BufRead *.go set filetype=go
 
 ""C++
 augroup cpp-path
@@ -132,6 +136,7 @@ if dein#tap('lightline.vim')
 endif
 
 if dein#tap('neocomplete.vim')
+  let g:acp_enableAtStartup = 0
   let g:neocomplete#enable_at_startup = 1
   let g:neocomplete#enable_smart_case = 1 
   " Set minimum syntax keyword length. 
@@ -141,13 +146,14 @@ if dein#tap('neocomplete.vim')
   let g:neocomplete#sources#dictionary#dictionaries = {     
         \ 'default' : '',     
         \ 'vimshell' : $HOME.'/.vimshell_hist',     
-        \ 'scheme' : $HOME.'/.gosh_completions'         
+        \ 'scheme' : $HOME .'/.gosh_completions',
+        \ 'ruby' : $HOME . '/.dicts/ruby.dict'  
         \ }
-  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
   if !exists('g:neocomplete#keyword_patterns')     
     let g:neocomplete#keyword_patterns = {} 
   endif 
   let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 endif
 
 filetype plugin on

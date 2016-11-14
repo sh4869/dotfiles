@@ -46,11 +46,13 @@ nnoremap sw <C-w>w
 " 全角スペース
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
 au BufNewFile,BufRead * match ZenkakuSpace /　/
+set list 
+set listchars=tab:>-
 
 "File set
 au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead *.ino set filetype=arduino
-au BufNewFile,BufRead *.kn	set filetype=kuin
+au BufNewFile,BufRead *.kn  set filetype=kuin
 au BufNewFile,BufRead *.md  set filetype=markdown
 au BufNewFile,BufRead *.dart set filetype=dart
 au BufNewFile,BufRead *.tex set filetype=tex
@@ -87,7 +89,7 @@ if &runtimepath !~# '/dein.vim'
   endif
   execute 'set runtimepath^=' . s:dein_repo_dir
 endif
-
+  
 " 設定開始
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)

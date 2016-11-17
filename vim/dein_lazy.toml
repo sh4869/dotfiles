@@ -1,15 +1,3 @@
-# Compete 
-[[plugins]]
-repo = 'Shougo/neocomplete.vim'
-on_i = 1
-
-[[plugins]] 
-repo = 'Shougo/neco-vim' 
-on_ft = 'vim'
-
-[[plugins]]
-repo = 'Shougo/neco-syntax'
-on_i = 1
 
 # language plugin
 ## Vim Plugin for Ruby
@@ -31,3 +19,8 @@ on_ft = ['crystal']
 [[plugin]]
 repo = 'lervag/vimtex'
 on_ft = ['tex']
+
+## Go Plugin
+[[plugin]]
+repo = 'fatih/vim-go'
+on_ft = ['go']

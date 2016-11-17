@@ -30,6 +30,7 @@ setting_vimrc(){
 	ln -s ~/dotfiles/.vimrc ~/.vimrc
 	echo "Replce .vimrc!!"
   fi
+  rm ~/.vim/rc/*.toml
   ln -s ~/dotfiles/vim/dein.toml ~/.vim/rc/dein.toml
   ln -s ~/dotfiles/vim/dein_lazy.toml ~/.vim/rc/dein_lazy.toml
 

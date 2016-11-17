@@ -24,3 +24,8 @@ on_ft = ['tex']
 [[plugin]]
 repo = 'fatih/vim-go'
 on_ft = ['go']
+
+[[plugin]]
+repo = 'vim-jp/vim-cpp'
+on_ft = ['cpp']
+

@@ -89,7 +89,7 @@ if &runtimepath !~# '/dein.vim'
   endif
   execute 'set runtimepath^=' . s:dein_repo_dir
 endif
-  
+
 " 設定開始
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
@@ -156,7 +156,30 @@ if dein#tap('neocomplete.vim')
   endif 
   let g:neocomplete#keyword_patterns['default'] = '\h\w*'
   inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+  let g:neocomplete#force_omni_input_patterns.cpp =
+        \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 endif
+
+" CPP setting
+"" NameSpace Setting
+
+augroup cpp-namespace
+    autocmd!
+    autocmd FileType cpp inoremap <buffer><expr>; <SID>expand_namespace()
+augroup END
+function! s:expand_namespace()
+    let s = getline('.')[0:col('.')-1]
+    if s =~# '\<b;$'
+        return "\<BS>oost::"
+    elseif s =~# '\<s;$'
+        return "\<BS>td::"
+    elseif s =~# '\<d;$'
+        return "\<BS>etail::"
+    else
+        return ';'
+    endif
+endfunction
+
 
 filetype plugin on
 filetype indent on

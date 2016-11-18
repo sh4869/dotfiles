@@ -15,7 +15,6 @@ set shiftwidth=2
 set clipboard=unnamed,autoselect
 set synmaxcol=150
 set scrolloff=5
-
 " BackUp File
 set noswapfile
 set nobackup
@@ -43,11 +42,21 @@ inoremap <silent> jj <ESC>
 "" for window
 nnoremap sw <C-w>w
 
-" 全角スペース
-highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
-au BufNewFile,BufRead * match ZenkakuSpace /　/
 set list 
-set listchars=tab:>-
+set listchars=tab:>-,trail:_
+
+function! ZenkakuSpace()
+  highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
+endfunction
+
+if has('syntax')
+  augroup ZenkakuSpace
+    autocmd!
+    autocmd ColorScheme       * call ZenkakuSpace()
+    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+  augroup END
+  call ZenkakuSpace()
+endif
 
 "File set
 au BufNewFile,BufRead Gemfile set filetype=ruby
@@ -64,12 +73,6 @@ au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead *.cr set filetype=crystal
 au BufNewFile,BufRead *.hs set filetype=haskell
 au BufNewFile,BufRead *.go set filetype=go
-
-""C++
-augroup cpp-path
-  autocmd!
-  autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include
-augroup END
 
 ""NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
@@ -152,6 +155,7 @@ if dein#tap('neocomplete.vim')
         \ 'ruby' : $HOME . '/.dicts/ruby.dict'  
         \ }
   if !exists('g:neocomplete#keyword_patterns')     
+    let g:neocomplete#force_omni_input_patterns = {}
     let g:neocomplete#keyword_patterns = {} 
   endif 
   let g:neocomplete#keyword_patterns['default'] = '\h\w*'
@@ -164,22 +168,26 @@ endif
 "" NameSpace Setting
 
 augroup cpp-namespace
-    autocmd!
-    autocmd FileType cpp inoremap <buffer><expr>; <SID>expand_namespace()
+  autocmd!
+  autocmd FileType cpp inoremap <buffer><expr>; <SID>expand_namespace()
 augroup END
 function! s:expand_namespace()
-    let s = getline('.')[0:col('.')-1]
-    if s =~# '\<b;$'
-        return "\<BS>oost::"
-    elseif s =~# '\<s;$'
-        return "\<BS>td::"
-    elseif s =~# '\<d;$'
-        return "\<BS>etail::"
-    else
-        return ';'
-    endif
+  let s = getline('.')[0:col('.')-1]
+  if s =~# '\<b;$'
+    return "\<BS>oost::"
+  elseif s =~# '\<s;$'
+    return "\<BS>td::"
+  elseif s =~# '\<d;$'
+    return "\<BS>etail::"
+  else
+    return ';'
+  endif
 endfunction
 
+augroup cpp-path
+  autocmd!
+  autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include,/usr/include/c++/4.8
+augroup END
 
 filetype plugin on
 filetype indent on

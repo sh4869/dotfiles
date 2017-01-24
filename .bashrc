@@ -26,6 +26,8 @@ parse-git-branch()
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1] /'  
 }
 
+PROMPT_DIRTRIM=3
+
 # bash prompt
 PS1="\` 
 if [ \$? = 0 ]; then 

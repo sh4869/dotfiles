@@ -16,16 +16,16 @@ repo = 'rhysd/vim-crystal'
 on_ft = ['crystal']
 
 ## LaTeX Plugin
-[[plugin]]
+[[plugins]]
 repo = 'lervag/vimtex'
 on_ft = ['tex']
 
 ## Go Plugin
-[[plugin]]
+[[plugins]]
 repo = 'fatih/vim-go'
 on_ft = ['go']
 
-[[plugin]]
+[[plugins]]
 repo = 'vim-jp/vim-cpp'
 on_ft = ['cpp']
 

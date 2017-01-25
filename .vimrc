@@ -79,7 +79,12 @@ au BufNewFile,BufRead *.cr set filetype=crystal
 au BufNewFile,BufRead *.hs set filetype=haskell
 au BufNewFile,BufRead *.go set filetype=go
 
-""NERDTree
+"--- Tab
+nnoremap <S-Tab> gt
+nnoremap <Tab><Tab> gT
+for i in range(1, 9)
+  execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
+endfor
 
 "------------------- dein.vim ------------------------"
 
@@ -167,6 +172,11 @@ if dein#tap('neocomplete.vim')
         \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 endif
 
+if dein#tap("vimfiler.vim")
+  let g:vimfiler_as_default_explorer = 1
+  nnoremap <silent><C-e> :VimFilerExplorer<CR>
+endif
+
 " CPP setting
 "" NameSpace Setting
 
@@ -195,4 +205,3 @@ augroup END
 filetype plugin on
 filetype indent on
 syntax enable
-

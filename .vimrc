@@ -32,10 +32,14 @@ setlocal formatoptions-=o
 autocmd FileType * setlocal formatoptions-=ro
 
 if has('win32')
+  set term=xterm
+  set t_Co=256
+  let &t_AB="\e[48;5;%dm"
+  let &t_AF="\e[38;5;%dm"
+  colorscheme molokai
 else 
   colorscheme molokai
 endif
-set t_Co=256
 set background=dark
 highlight Normal ctermbg=none
 
@@ -193,3 +197,4 @@ augroup END
 filetype plugin on
 filetype indent on
 syntax enable
+

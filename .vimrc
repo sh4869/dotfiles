@@ -15,7 +15,6 @@ set shiftwidth=2
 set clipboard=unnamed,autoselect
 set synmaxcol=150
 set scrolloff=5
-set backspace=indent,eol,start
 
 " BackUp File
 set noswapfile
@@ -32,7 +31,7 @@ setlocal formatoptions-=o
 autocmd FileType * setlocal formatoptions-=ro
 
 if has('win32')
-  set term=xterm
+  set term=pcansi
   set t_Co=256
   let &t_AB="\e[48;5;%dm"
   let &t_AF="\e[38;5;%dm"
@@ -81,7 +80,6 @@ au BufNewFile,BufRead *.hs set filetype=haskell
 au BufNewFile,BufRead *.go set filetype=go
 
 ""NERDTree
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 "------------------- dein.vim ------------------------"
 

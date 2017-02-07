@@ -1,4 +1,3 @@
-
 # language plugin
 ## Vim Plugin for Ruby
 [[plugins]]
@@ -28,4 +27,12 @@ on_ft = ['go']
 [[plugins]]
 repo = 'vim-jp/vim-cpp'
 on_ft = ['cpp']
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript']
+
+[[plugins]]
+repo = 'Quramy/tsuquyomi'
+on_ft = ['typescript']
 

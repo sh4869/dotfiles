@@ -78,6 +78,8 @@ au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead *.cr set filetype=crystal
 au BufNewFile,BufRead *.hs set filetype=haskell
 au BufNewFile,BufRead *.go set filetype=go
+au BufNewFile,BufRead *.ts set filetype=typescript
+au BufNewFile,BufRead *.tsx set filetype=typescript
 
 "--- Tab
 nnoremap <S-Tab> gt

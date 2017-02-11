@@ -29,3 +29,10 @@ on_ft = ['go']
 repo = 'vim-jp/vim-cpp'
 on_ft = ['cpp']
 
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = ['rust']
+
+[[plugins]]
+repo = 'dart-lang/dart-vim-plugin'
+on_ft = ['dart']

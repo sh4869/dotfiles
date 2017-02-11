@@ -15,7 +15,6 @@ set shiftwidth=2
 set clipboard=unnamed,autoselect
 set synmaxcol=150
 set scrolloff=5
-set backspace=indent,eol,start
 
 " BackUp File
 set noswapfile
@@ -28,9 +27,22 @@ set fileencoding=utf-8
 setlocal formatoptions-=r
 setlocal formatoptions-=o
 autocmd FileType * setlocal formatoptions-=ro
+<<<<<<< HEAD
 syntax on
 colorscheme molokai
 set t_Co=256
+=======
+
+if has('win32')
+  set term=pcansi
+  set t_Co=256
+  let &t_AB="\e[48;5;%dm"
+  let &t_AF="\e[38;5;%dm"
+  colorscheme molokai
+else 
+  colorscheme molokai
+endif
+>>>>>>> origin/master
 set background=dark
 highlight Normal ctermbg=none
 
@@ -70,9 +82,21 @@ au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead *.cr set filetype=crystal
 au BufNewFile,BufRead *.hs set filetype=haskell
 au BufNewFile,BufRead *.go set filetype=go
+<<<<<<< HEAD
 au BufNewFile,BufRead *.rs set filetype=rust
 ""NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+=======
+au BufNewFile,BufRead *.ts set filetype=typescript
+au BufNewFile,BufRead *.tsx set filetype=typescript
+
+"--- Tab
+nnoremap <S-Tab> gt
+nnoremap <Tab><Tab> gT
+for i in range(1, 9)
+  execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
+endfor
+>>>>>>> origin/master
 
 "------------------- dein.vim ------------------------"
 
@@ -174,6 +198,11 @@ if dein#tap('syntastic')
   let g:syntastic_check_on_open = 1
   let g:syntastic_check_on_wq = 0
 endif
+if dein#tap("vimfiler.vim")
+  let g:vimfiler_as_default_explorer = 1
+  nnoremap <silent><C-e> :VimFilerExplorer<CR>
+endif
+
 
 augroup cpp-namespace
   autocmd!

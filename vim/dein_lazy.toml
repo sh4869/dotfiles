@@ -1,4 +1,3 @@
-
 # language plugin
 ## Vim Plugin for Ruby
 [[plugins]]
@@ -36,3 +35,12 @@ on_ft = ['rust']
 [[plugins]]
 repo = 'dart-lang/dart-vim-plugin'
 on_ft = ['dart']
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript']
+
+[[plugins]]
+repo = 'Quramy/tsuquyomi'
+on_ft = ['typescript']
+

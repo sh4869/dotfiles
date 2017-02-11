@@ -22,19 +22,14 @@ set noswapfile
 set nobackup
 set noundofile
 
-syntax on
-
 set mouse=a
 set modifiable
 set fileencoding=utf-8
 setlocal formatoptions-=r
 setlocal formatoptions-=o
 autocmd FileType * setlocal formatoptions-=ro
-
-if has('win32')
-else 
-  colorscheme molokai
-endif
+syntax on
+colorscheme molokai
 set t_Co=256
 set background=dark
 highlight Normal ctermbg=none
@@ -75,7 +70,7 @@ au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead *.cr set filetype=crystal
 au BufNewFile,BufRead *.hs set filetype=haskell
 au BufNewFile,BufRead *.go set filetype=go
-
+au BufNewFile,BufRead *.rs set filetype=rust
 ""NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
@@ -165,8 +160,20 @@ if dein#tap('neocomplete.vim')
         \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 endif
 
-" CPP setting
-"" NameSpace Setting
+if dein#tap('rust.vim')
+  let g:rustfmt_autosave = 1
+endif
+
+if dein#tap('syntastic')
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+
+  let g:syntastic_always_populate_loc_list = 1
+  let g:syntastic_auto_loc_list = 1
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_check_on_wq = 0
+endif
 
 augroup cpp-namespace
   autocmd!

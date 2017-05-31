@@ -31,7 +31,7 @@ autocmd FileType * setlocal formatoptions-=ro
 syntax on
 colorscheme molokai
 set t_Co=256
-
+set encoding=utf-8
 if has('win32')
   set term=pcansi
   set t_Co=256
@@ -193,11 +193,17 @@ if dein#tap('syntastic')
   let g:syntastic_check_on_open = 1
   let g:syntastic_check_on_wq = 0
 endif
+
 if dein#tap("vimfiler.vim")
   let g:vimfiler_as_default_explorer = 1
   nnoremap <silent><C-e> :VimFilerExplorer<CR>
 endif
 
+if dein#tap("vim-indent-guides")
+  let g:indent_guides_start_level = 2
+  let g:indent_guides_enable_on_vim_startup = 1
+  let g:indent_guides_guide_size = 1
+endif
 
 augroup cpp-namespace
   autocmd!

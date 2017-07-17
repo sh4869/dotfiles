@@ -205,6 +205,10 @@ if dein#tap("vim-indent-guides")
   let g:indent_guides_guide_size = 1
 endif
 
+if dein#tap("lexima.vim")
+  let g:lexima_enable_basic_rules = 1
+endif
+
 augroup cpp-namespace
   autocmd!
   autocmd FileType cpp inoremap <buffer><expr>; <SID>expand_namespace()

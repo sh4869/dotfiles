@@ -4,8 +4,7 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'Shougo/unite.vim'
 
-
-# Compete 
+# Compete
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
 
@@ -69,3 +68,6 @@ repo = 'Shougo/vimfiler.vim'
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
+
+[[plugins]]
+repo = 'cohama/lexima.vim'

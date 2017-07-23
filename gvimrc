@@ -2,6 +2,7 @@ set guioptions-=T
 set guioptions-=r
 set guifont=Migu_1M:h12:cANSI:qDRAFT
 set guioptions-=T
+set visualbell t_vb= 
 gui
 set background=dark
 colorscheme torte

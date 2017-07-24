@@ -179,6 +179,14 @@ if dein#tap('neocomplete.vim')
         \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 endif
 
+if dein#tap('neosnippet.vim')
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k>     <Plug>(neosnippet_expand_target)
+  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+        \ "\<Plug>(neosnippet_exapnd_or_jump)"  : "\<TAB>"
+endif
+
 if dein#tap('rust.vim')
   let g:rustfmt_autosave = 1
 endif

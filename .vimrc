@@ -134,8 +134,8 @@ if dein#tap('lightline.vim')
         \             [ 'fugitive','readonly', 'filename', 'modified' ] ]
         \ },
         \ 'component_visible_condition': {
-        \   'readonly': '(&filetype!="help"&& &readonly)',
-        \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+        \   'readonly': '(&filetype!~# "\v(help|vimfiler|unite)"&& &readonly)',
+        \   'modified': '(&filetype!~#"\v(help|vimfiler|unite)"&&(&modified||!&modifiable))',
         \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
         \ },
         \ 'component': {

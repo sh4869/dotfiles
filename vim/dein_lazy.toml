@@ -51,3 +51,8 @@ on_ft = ['c','cpp']
 [[plugins]]
 repo = 'kannokanno/previm'
 on_ft = ['markdown']
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = ['markdown']
+

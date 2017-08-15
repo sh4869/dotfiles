@@ -28,7 +28,6 @@ set fileencoding=utf-8
 setlocal formatoptions-=r
 setlocal formatoptions-=o
 autocmd FileType * setlocal formatoptions-=ro
-syntax on
 set t_Co=256
 set encoding=utf-8
 if has('win32')
@@ -46,8 +45,8 @@ inoremap <silent> jj <ESC>
 "" for window
 nnoremap sw <C-w>w
 
-set list 
-set listchars=tab:>-,trail:_
+set list
+set listchars=tab:>-,trail:_,eol:\
 
 function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
@@ -62,7 +61,7 @@ if has('syntax')
   call ZenkakuSpace()
 endif
 
-"File set
+" File set
 au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead *.ino set filetype=arduino
 au BufNewFile,BufRead *.kn  set filetype=kuin
@@ -78,8 +77,6 @@ au BufNewFile,BufRead *.cr set filetype=crystal
 au BufNewFile,BufRead *.hs set filetype=haskell
 au BufNewFile,BufRead *.go set filetype=go
 au BufNewFile,BufRead *.rs set filetype=rust
-""NERDTree
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
 au BufNewFile,BufRead *.ts set filetype=typescript
 au BufNewFile,BufRead *.tsx set filetype=typescript
 
@@ -218,6 +215,10 @@ endif
 
 if dein#tap("AOJ.vim")
   let g:aoj#user_id = "sh4869"
+endif
+
+if dein#tap("vim-markdown")
+  let g:vim_markdown_folding_disabled = 1
 endif
 
 augroup cpp-namespace

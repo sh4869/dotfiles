@@ -29,7 +29,6 @@ setlocal formatoptions-=r
 setlocal formatoptions-=o
 autocmd FileType * setlocal formatoptions-=ro
 syntax on
-colorscheme molokai
 set t_Co=256
 set encoding=utf-8
 if has('win32')
@@ -37,10 +36,8 @@ if has('win32')
   set t_Co=256
   let &t_AB="\e[48;5;%dm"
   let &t_AF="\e[38;5;%dm"
-  colorscheme molokai
-else 
-  colorscheme molokai
 endif
+colorscheme zenburn
 set background=dark
 highlight Normal ctermbg=none
 
@@ -204,6 +201,8 @@ endif
 
 if dein#tap("vimfiler.vim")
   let g:vimfiler_as_default_explorer = 1
+  let g:vimfiler_force_overwrite_statusline = 0
+  let g:vimfiler_ignore_pattern = []
   nnoremap <silent><C-e> :VimFilerExplorer<CR>
 endif
 
@@ -215,6 +214,10 @@ endif
 
 if dein#tap("lexima.vim")
   let g:lexima_enable_basic_rules = 1
+endif
+
+if dein#tap("AOJ.vim")
+  let g:aoj#user_id = "sh4869"
 endif
 
 augroup cpp-namespace

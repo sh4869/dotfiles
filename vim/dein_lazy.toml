@@ -44,3 +44,10 @@ on_ft = ['typescript']
 repo = 'Quramy/tsuquyomi'
 on_ft = ['typescript']
 
+[[plugins]]
+repo = 'mopp/AOJ.vim'
+on_ft = ['c','cpp']
+
+[[plugins]]
+repo = 'kannokanno/previm'
+on_ft = ['markdown']

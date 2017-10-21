@@ -29,8 +29,6 @@ set fileencoding=utf-8
 setlocal formatoptions-=r
 setlocal formatoptions-=o
 autocmd FileType * setlocal formatoptions-=ro
-syntax on
-colorscheme molokai
 set t_Co=256
 set encoding=utf-8
 if has('win32')
@@ -38,10 +36,8 @@ if has('win32')
   set t_Co=256
   let &t_AB="\e[48;5;%dm"
   let &t_AF="\e[38;5;%dm"
-  colorscheme molokai
-else 
-  colorscheme molokai
 endif
+colorscheme zenburn
 set background=dark
 highlight Normal ctermbg=none
 
@@ -50,8 +46,8 @@ inoremap <silent> jj <ESC>
 "" for window
 nnoremap sw <C-w>w
 
-set list 
-set listchars=tab:>-,trail:_
+set list
+set listchars=tab:>-,trail:_,eol:\
 
 function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
@@ -66,7 +62,7 @@ if has('syntax')
   call ZenkakuSpace()
 endif
 
-"File set
+" File set
 au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead *.ino set filetype=arduino
 au BufNewFile,BufRead *.kn  set filetype=kuin
@@ -82,8 +78,6 @@ au BufNewFile,BufRead *.cr set filetype=crystal
 au BufNewFile,BufRead *.hs set filetype=haskell
 au BufNewFile,BufRead *.go set filetype=go
 au BufNewFile,BufRead *.rs set filetype=rust
-""NERDTree
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
 au BufNewFile,BufRead *.ts set filetype=typescript
 au BufNewFile,BufRead *.tsx set filetype=typescript
 
@@ -141,8 +135,8 @@ if dein#tap('lightline.vim')
         \             [ 'fugitive','readonly', 'filename', 'modified' ] ]
         \ },
         \ 'component_visible_condition': {
-        \   'readonly': '(&filetype!="help"&& &readonly)',
-        \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+        \   'readonly': '(&filetype!~# "\v(help|vimfiler|unite)"&& &readonly)',
+        \   'modified': '(&filetype!~#"\v(help|vimfiler|unite)"&&(&modified||!&modifiable))',
         \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
         \ },
         \ 'component': {
@@ -180,6 +174,14 @@ if dein#tap('neocomplete.vim')
         \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 endif
 
+if dein#tap('neosnippet.vim')
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k>     <Plug>(neosnippet_expand_target)
+  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+        \ "\<Plug>(neosnippet_exapnd_or_jump)"  : "\<TAB>"
+endif
+
 if dein#tap('rust.vim')
   let g:rustfmt_autosave = 1
 endif
@@ -197,6 +199,8 @@ endif
 
 if dein#tap("vimfiler.vim")
   let g:vimfiler_as_default_explorer = 1
+  let g:vimfiler_force_overwrite_statusline = 0
+  let g:vimfiler_ignore_pattern = []
   nnoremap <silent><C-e> :VimFilerExplorer<CR>
 endif
 
@@ -209,6 +213,18 @@ endif
 if dein#tap("vim-clang")
   let g:clang_c_options = '-std=gnu11'
   let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+endif
+
+if dein#tap("lexima.vim")
+  let g:lexima_enable_basic_rules = 1
+endif
+
+if dein#tap("AOJ.vim")
+  let g:aoj#user_id = "sh4869"
+endif
+
+if dein#tap("vim-markdown")
+  let g:vim_markdown_folding_disabled = 1
 endif
 
 augroup cpp-namespace

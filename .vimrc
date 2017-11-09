@@ -79,6 +79,7 @@ au BufNewFile,BufRead *.go set filetype=go
 au BufNewFile,BufRead *.rs set filetype=rust
 au BufNewFile,BufRead *.ts set filetype=typescript
 au BufNewFile,BufRead *.tsx set filetype=typescript
+au BufNewFile,BufRead *.md set filetype=markdown
 
 "--- Tab
 nnoremap <S-Tab> gt
@@ -219,6 +220,14 @@ endif
 
 if dein#tap("vim-markdown")
   let g:vim_markdown_folding_disabled = 1
+endif
+
+if dein#tap("vimtex") 
+  let g:vimtex_latexmk_continuous = 1
+  let g:vimtex_view_general_viewer = "SumatraPDF"
+  let g:vimtex_view_general_options
+    \ = '-reuse-instance -forward-search @tex @line @pdf'
+  let g:vimtex_view_general_options_latexmk = '-reuse-instance'
 endif
 
 augroup cpp-namespace

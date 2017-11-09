@@ -1,4 +1,14 @@
 " Normal Setting
+set term=xterm
+if has('win32')
+  set t_Co=256
+  let &t_AB="\e[48;5;%dm"
+  let &t_AF="\e[38;5;%dm"
+  "" For Cmder
+  inoremap <Char-0x07F> <BS>
+  noremap <Char-0x07F> <BS>
+endif
+
 set number
 set title
 set nocompatible
@@ -15,10 +25,10 @@ set shiftwidth=2
 set clipboard=unnamed,autoselect
 set synmaxcol=150
 set scrolloff=5
-set backspace=indent,eol,start
+set backspace=2
 set notitle
 
-" BackUp File
+" Backspace
 set noswapfile
 set nobackup
 set noundofile
@@ -31,18 +41,8 @@ setlocal formatoptions-=o
 autocmd FileType * setlocal formatoptions-=ro
 set t_Co=256
 set encoding=utf-8
-if has('win32')
-  set term=pcansi
-  set t_Co=256
-  let &t_AB="\e[48;5;%dm"
-  let &t_AF="\e[38;5;%dm"
-else
-  set term=xterm
-endif
-
-colorscheme zenburn
 set background=dark
-highlight Normal ctermbg=none
+colorscheme iceberg
 
 " Key bind
 inoremap <silent> jj <ESC>
@@ -215,7 +215,6 @@ if dein#tap("vim-indent-guides")
 endif
 
 if dein#tap("vim-clang")
-  let g:clang_c_options = '-std=gnu11'
   let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
 endif
 
@@ -235,7 +234,7 @@ if dein#tap("vimtex")
   let g:vimtex_latexmk_continuous = 1
   let g:vimtex_view_general_viewer = "SumatraPDF"
   let g:vimtex_view_general_options
-    \ = '-reuse-instance -forward-search @tex @line @pdf'
+        \ = '-reuse-instance -forward-search @tex @line @pdf'
   let g:vimtex_view_general_options_latexmk = '-reuse-instance'
 endif
 

@@ -16,6 +16,7 @@ set clipboard=unnamed,autoselect
 set synmaxcol=150
 set scrolloff=5
 set backspace=indent,eol,start
+set notitle
 
 " BackUp File
 set noswapfile
@@ -35,7 +36,10 @@ if has('win32')
   set t_Co=256
   let &t_AB="\e[48;5;%dm"
   let &t_AF="\e[38;5;%dm"
+else
+  set term=xterm
 endif
+
 colorscheme zenburn
 set background=dark
 highlight Normal ctermbg=none
@@ -208,6 +212,11 @@ if dein#tap("vim-indent-guides")
   let g:indent_guides_start_level = 2
   let g:indent_guides_enable_on_vim_startup = 1
   let g:indent_guides_guide_size = 1
+endif
+
+if dein#tap("vim-clang")
+  let g:clang_c_options = '-std=gnu11'
+  let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
 endif
 
 if dein#tap("lexima.vim")

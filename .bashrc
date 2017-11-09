@@ -111,7 +111,7 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}
 # read local setting
 [ -f ~/.bash_profile ] && source ~/.bash_profile
 
-export PATH=$PATH:$HOME/.rbenv/bin
+export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)" 
 
 # added by travis gem

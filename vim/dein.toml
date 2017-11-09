@@ -75,3 +75,8 @@ repo = 'cohama/lexima.vim'
 [[plugins]]
 repo = 'fuenor/vim-wordcount'
 
+[[plugins]]
+repo = "basyura/twibill.vim"
+
+[[plugins]]
+repo = 'basyura/TweetVim'

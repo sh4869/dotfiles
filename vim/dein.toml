@@ -9,10 +9,7 @@ repo = 'Shougo/unite.vim'
 repo = 'Shougo/neocomplete.vim'
 
 [[plugins]]
-repo = 'Shougo/neosnippet.vim'
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
+repo = 'Shougo/vimshell.vim'
 
 [[plugins]] 
 repo = 'Shougo/neco-vim' 
@@ -20,6 +17,9 @@ repo = 'Shougo/neco-vim'
 [[plugins]]
 repo = 'Shougo/neco-syntax'
 
+# Color
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
 
 # User Inter Face #
 ## Statusline extension Plugin

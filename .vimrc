@@ -10,7 +10,6 @@ if has('win32')
 endif
 
 set number
-set title
 set nocompatible
 set ruler
 set showmatch
@@ -39,9 +38,7 @@ set fileencoding=utf-8
 setlocal formatoptions-=r
 setlocal formatoptions-=o
 autocmd FileType * setlocal formatoptions-=ro
-set t_Co=256
 set encoding=utf-8
-set background=dark
 colorscheme iceberg
 
 " Key bind
@@ -212,6 +209,9 @@ if dein#tap("vim-indent-guides")
   let g:indent_guides_start_level = 2
   let g:indent_guides_enable_on_vim_startup = 1
   let g:indent_guides_guide_size = 1
+  let g:indent_guides_auto_colors = 0
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 endif
 
 if dein#tap("vim-clang")

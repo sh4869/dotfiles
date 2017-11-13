@@ -1,5 +1,8 @@
 " Normal Setting
+
 set term=xterm
+
+" cmder
 if has('win32')
   set t_Co=256
   let &t_AB="\e[48;5;%dm"
@@ -11,46 +14,43 @@ endif
 
 set number
 set nocompatible
-set ruler
 set showmatch
 set matchtime=1
 set wildmenu
 set display=lastline
 set wrap
-set smartindent
-set expandtab
-set tabstop=2
-set shiftwidth=2
 set clipboard=unnamed,autoselect
-set synmaxcol=150
+set synmaxcol=320
 set scrolloff=5
 set backspace=2
 set notitle
 
-" Backspace
 set noswapfile
 set nobackup
 set noundofile
 
 set mouse=a
-set modifiable
+
 set fileencoding=utf-8
-setlocal formatoptions-=r
-setlocal formatoptions-=o
-autocmd FileType * setlocal formatoptions-=ro
 set encoding=utf-8
-colorscheme iceberg
 
 " Key bind
 inoremap <silent> jj <ESC>
 "" for window
 nnoremap sw <C-w>w
 
+" indent
+set expandtab
+set tabstop=2
+set smartindent
+set shiftwidth=2
 set list
-set listchars=tab:>-,trail:_,eol:\
+set listchars=tab:>-,trail:_,eol:↲
 
+" Scheme
+colorscheme iceberg
 function! ZenkakuSpace()
-  highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
+  highlight ZenkakuSpace cterm=underline ctermfg=Red gui=reverse guifg=DarkMagenta
 endfunction
 
 if has('syntax')
@@ -89,11 +89,7 @@ for i in range(1, 9)
   execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
 endfor
 
-"------------------- dein.vim ------------------------"
-
-if &compatible
-  set nocompatible
-endif
+" dein.vim
 let s:dein_dir = expand('~/.cache/dein')
 " dein.vim 本体
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
@@ -191,7 +187,6 @@ if dein#tap('syntastic')
   set statusline+=%#warningmsg#
   set statusline+=%{SyntasticStatuslineFlag()}
   set statusline+=%*
-
   let g:syntastic_always_populate_loc_list = 1
   let g:syntastic_auto_loc_list = 1
   let g:syntastic_check_on_open = 1
@@ -210,7 +205,7 @@ if dein#tap("vim-indent-guides")
   let g:indent_guides_enable_on_vim_startup = 1
   let g:indent_guides_guide_size = 1
   let g:indent_guides_auto_colors = 0
-  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=white
   autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 endif
 

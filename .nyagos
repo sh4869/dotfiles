@@ -1,5 +1,9 @@
+share.getTime = function()
+  return os.date("%Y-%m-%d %H:%M:%S")
+end
+
 set {
-  PROMPT='\x1b[104;30m['..os.date("%Y-%m-%d %H:%M:%S") ..']\x1b[44;30m[$P]\x1b[0m$_\x1b[44,30m $\x1b[0m'
+  PROMPT='\x1b[104;30m['.. share.getTime() ..']\x1b[44;30m[$P]\x1b[0m$_\x1b[44,30m $\x1b[0m'
 }
 
 alias{

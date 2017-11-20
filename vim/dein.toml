@@ -17,9 +17,6 @@ repo = 'Shougo/neco-vim'
 [[plugins]]
 repo = 'Shougo/neco-syntax'
 
-# Color
-[[plugins]]
-repo = 'cocopon/iceberg.vim'
 
 # User Inter Face #
 ## Statusline extension Plugin

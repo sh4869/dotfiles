@@ -1,5 +1,4 @@
 " Normal Setting
-
 set term=xterm
 
 " cmder
@@ -249,11 +248,6 @@ function! s:expand_namespace()
     return ';'
   endif
 endfunction
-
-augroup cpp-path
-  autocmd!
-  autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include,/usr/include/c++/4.8
-augroup END
 
 filetype plugin on
 filetype indent on

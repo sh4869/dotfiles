@@ -60,3 +60,6 @@ on_ft = ['markdown']
 repo = 'plasticboy/vim-markdown'
 on_ft = ['markdown']
 
+[[plugins]]
+repo = 'digitaltoad/vim-pug'
+on_ft = ['pug']

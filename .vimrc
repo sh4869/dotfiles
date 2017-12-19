@@ -80,6 +80,7 @@ au BufNewFile,BufRead *.rs set filetype=rust
 au BufNewFile,BufRead *.ts set filetype=typescript
 au BufNewFile,BufRead *.tsx set filetype=typescript
 au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.pug set filetype=pug
 
 "--- Tab
 nnoremap <S-Tab> gt
@@ -210,6 +211,7 @@ endif
 
 if dein#tap("vim-clang")
   let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+  let g:clang_include_sysheader = 0
 endif
 
 if dein#tap("lexima.vim")

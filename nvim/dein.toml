@@ -1,0 +1,55 @@
+# User Inter Face #
+## Statusline extension Plugin
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+# Utility #
+## Vim Web API Plugins
+[[plugins]]
+repo = 'mattn/webapi-vim'
+
+## Open URI with browser
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+# Command and General Text #
+## Git wrapper
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+## Git Viewer
+[[plugins]] 
+repo = 'cohama/agit.vim'
+
+## Gist Plugin
+[[plugins]]
+repo = 'mattn/gist-vim'
+
+## Unite Interface
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+
+# quickrun
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'vim-syntastic/syntastic'
+# vimfiler
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
+[[plugins]]
+repo = 'fuenor/vim-wordcount'

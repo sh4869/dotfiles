@@ -6,5 +6,5 @@ set visualbell t_vb=
 set noerrorbells
 set background=dark
 autocmd GUIEnter * set transparency=220
-colorscheme torte
+colorscheme molokai
 highlight Normal guifg=white guibg=black

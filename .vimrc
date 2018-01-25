@@ -33,6 +33,8 @@ set mouse=a
 set fileencoding=utf-8
 set encoding=utf-8
 
+colorscheme iceberg 
+
 " Key bind
 inoremap <silent> jj <ESC>
 "" for window

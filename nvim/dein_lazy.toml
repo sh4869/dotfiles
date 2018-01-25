@@ -1,0 +1,62 @@
+# language plugin
+## Vim Plugin for Ruby
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+on_ft = ['ruby']
+
+## D language Plugin
+[[plugins]]
+repo = 'JesseKPhillips/d.vim'
+on_ft = ['d']
+
+## Crystal Plugin
+[[plugins]]
+repo = 'rhysd/vim-crystal'
+on_ft = ['crystal']
+
+## LaTeX Plugin
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ['tex']
+
+## Go Plugin
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
+
+[[plugins]]
+repo = 'vim-jp/vim-cpp'
+on_ft = ['cpp']
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = ['rust']
+
+[[plugins]]
+repo = 'dart-lang/dart-vim-plugin'
+on_ft = ['dart']
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript']
+
+[[plugins]]
+repo = 'Quramy/tsuquyomi'
+on_ft = ['typescript']
+
+[[plugins]]
+repo = 'justmao945/vim-clang'
+on_ft = ['c','cpp']
+
+[[plugins]]
+repo = 'mopp/AOJ.vim'
+on_ft = ['c','cpp']
+
+[[plugins]]
+repo = 'kannokanno/previm'
+on_ft = ['markdown']
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = ['markdown']
+

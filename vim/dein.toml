@@ -4,6 +4,9 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'Shougo/unite.vim'
 
+[[plugins]]
+repo = 'Shougo/unite-outline'
+
 # Compete
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
@@ -73,7 +76,8 @@ repo = 'cohama/lexima.vim'
 repo = 'fuenor/vim-wordcount'
 
 [[plugins]]
-repo = "basyura/twibill.vim"
+repo = 'majutsushi/tagbar'
 
 [[plugins]]
-repo = 'basyura/TweetVim'
+repo = 'jszakmeister/markdown2ctags'
+rtp = ''

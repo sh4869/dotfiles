@@ -67,3 +67,11 @@ on_ft = ['pug']
 [[plugins]]
 repo ='violetyk/iikanji-markdown.vim'
 on_ft = ['markdown']
+
+[[plugins]]
+repo = 'rhysd/vim-wasm'
+on_ft = ['wasm','wat']
+
+[[plugins]]
+repo = 'moro/vim-review'
+on_ft = ['review']

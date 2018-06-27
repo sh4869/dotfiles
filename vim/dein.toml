@@ -79,5 +79,4 @@ repo = 'fuenor/vim-wordcount'
 repo = 'majutsushi/tagbar'
 
 [[plugins]]
-repo = 'jszakmeister/markdown2ctags'
-rtp = ''
+repo = 'cocopon/iceberg.vim'

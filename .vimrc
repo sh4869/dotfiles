@@ -1,103 +1,45 @@
-" Normal Setting
-"
-" cmder
-if has('win32')
-  set t_Co=256
-  let &t_AB="\e[48;5;%dm"
-  let &t_AF="\e[38;5;%dm"
-  "" For Cmder
-  inoremap <Char-0x07F> <BS>
-  noremap <Char-0x07F> <BS>
-endif
+""" sh4869 .vimrc
 
+" > 標準設定
+"" 表示関連設定
 set number
-set nocompatible
+set wrap
+set ambiwidth=double
+set display=lastline
+set list
+set listchars=tab:>-,trail:_,eol:↲
 set showmatch
 set matchtime=1
-set display=lastline
-set wrap
-set clipboard=unnamed,autoselect
 set synmaxcol=320
-set scrolloff=5
-set backspace=2
-set notitle
-
-set noswapfile
-set nobackup
-set noundofile
-
-set mouse=a
-
-set fileencoding=utf-8
-set encoding=utf-8
-
-set ambiwidth=double
-
-" Key bind
-inoremap <silent> jj <ESC>
-"" for window
-nnoremap sw <C-w>w
-
-" indent
+"" 編集系
 set expandtab
 set tabstop=2
 set smartindent
 set shiftwidth=2
-set list
-set listchars=tab:>-,trail:_,eol:↲
-
+set backspace=2
+"" 操作系
+set mouse=a
+set clipboard=unnamed,autoselect
+set scrolloff=5
+"" ファイル系
+set nobackup
+set noundofile
+set noswapfile
+set fileencoding=utf-8
+set encoding=utf-8
+"" その他
+set notitle
+"" カラースキーマ
 colorscheme iceberg
+"" 有効化
 
-" Scheme
-function! ZenkakuSpace()
-  highlight ZenkakuSpace cterm=underline ctermfg=Red gui=reverse guifg=DarkMagenta
-endfunction
+"> キーボード
+inoremap <silent> jj <ESC>
+nnoremap sw <C-w>w
 
-syntax on
 
-if has('syntax')
-  augroup ZenkakuSpace
-    autocmd!
-    autocmd ColorScheme       * call ZenkakuSpace()
-    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
-  augroup END
-  call ZenkakuSpace()
-endif
-
-" File set
-au BufNewFile,BufRead Gemfile set filetype=ruby
-au BufNewFile,BufRead *.ino set filetype=arduino
-au BufNewFile,BufRead *.kn  set filetype=kuin
-au BufNewFile,BufRead *.md  set filetype=markdown
-au BufNewFile,BufRead *.dart set filetype=dart
-au BufNewFile,BufRead *.tex set filetype=tex
-au BufNewFile,BufRead *.qml set filetype=qml
-au BufNewFile,BufRead *.qrc set filetype=xml
-au BufNewFile,BufRead *.cpp set filetype=cpp
-au BufNewFile,BufRead *.d set filetype=d
-au BufNewFile,BufRead *.coffee set filetype=coffee
-au BufNewFile,BufRead *.cr set filetype=crystal
-au BufNewFile,BufRead *.hs set filetype=haskell
-au BufNewFile,BufRead *.go set filetype=go
-au BufNewFile,BufRead *.rs set filetype=rust
-au BufNewFile,BufRead *.ts set filetype=typescript
-au BufNewFile,BufRead *.tsx set filetype=typescript
-au BufNewFile,BufRead *.md set filetype=markdown
-au BufNewFile,BufRead *.pug set filetype=pug
-au BufNewFile,BufRead *.wat set filetype=wat
-au BufNewFile,BufRead *.wasm set filetype=wasm
-au BufNewFile,BufRead *.re set filetype=review
-
-"--- Tab
-nnoremap <S-Tab> gt
-nnoremap <Tab><Tab> gT
-for i in range(1, 9)
-  execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
-endfor
-
-" dein.vim
+"> dein.vim
 let s:dein_dir = expand('~/.cache/dein')
-" dein.vim 本体
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 if &runtimepath !~# '/dein.vim'
@@ -107,25 +49,18 @@ if &runtimepath !~# '/dein.vim'
   execute 'set runtimepath^=' . s:dein_repo_dir
 endif
 
-" 設定開始
+
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
-
-  " プラグインリストを収めた TOML ファイル
-  " 予め TOML ファイル（後述）を用意しておく
   let g:rc_dir    = expand('~/.vim/rc')
   let s:toml      = g:rc_dir . '/dein.toml'
   let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
-
-  " TOML を読み込み、キャッシュしておく
   call dein#load_toml(s:toml)
   call dein#load_toml(s:lazy_toml,{'lazy' : 1})
-  " 設定終了
   call dein#end()
   call dein#save_state()
 endif
 
-" もし、未インストールものものがあったらインストール
 if dein#check_install()
   call dein#install()
 endif
@@ -240,5 +175,27 @@ if dein#tap("vimtex")
   let g:vimtex_view_general_options_latexmk = '-reuse-instance'
 endif
 
-filetype plugin on
-filetype indent on
+if has('win32')
+  set t_Co=256
+  let &t_AB="\e[48;5;%dm"
+  let &t_AF="\e[38;5;%dm"
+  "" For Cmder
+  inoremap <Char-0x07F> <BS>
+  noremap <Char-0x07F> <BS>
+endif
+
+function! ZenkakuSpace()
+  highlight ZenkakuSpace cterm=underline ctermfg=Red gui=reverse guifg=DarkMagenta
+endfunction
+
+if has('syntax')
+  augroup ZenkakuSpace
+    autocmd!
+    autocmd ColorScheme       * call ZenkakuSpace()
+    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+  augroup END
+  call ZenkakuSpace()
+endif
+
+syntax on
+filetype plugin indent on

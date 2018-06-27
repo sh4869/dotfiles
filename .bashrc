@@ -111,10 +111,4 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}
 # read local setting
 [ -f ~/.bash_profile ] && source ~/.bash_profile
 
-export PATH=$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init -)" 
 
-# added by travis gem
-[ -f /root/.travis/travis.sh ] && source /root/.travis/travis.sh
-
-cd $HOME

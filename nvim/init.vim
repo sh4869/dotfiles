@@ -1,5 +1,4 @@
 if &compatible
-pnginx['ssl_certificate'] = "/etc/letsencrypt/live/gitlab.kirika.sh4869.net/fullchain.pem"
 	set nocompatible 
 endif
 augroup MyAutoCmd

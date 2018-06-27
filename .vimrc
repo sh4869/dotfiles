@@ -1,6 +1,5 @@
 " Normal Setting
-set term=xterm
-
+"
 " cmder
 if has('win32')
   set t_Co=256
@@ -15,7 +14,6 @@ set number
 set nocompatible
 set showmatch
 set matchtime=1
-set wildmenu
 set display=lastline
 set wrap
 set clipboard=unnamed,autoselect
@@ -33,7 +31,7 @@ set mouse=a
 set fileencoding=utf-8
 set encoding=utf-8
 
-colorscheme iceberg 
+set ambiwidth=double
 
 " Key bind
 inoremap <silent> jj <ESC>
@@ -48,11 +46,14 @@ set shiftwidth=2
 set list
 set listchars=tab:>-,trail:_,eol:↲
 
-" Scheme
 colorscheme iceberg
+
+" Scheme
 function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=underline ctermfg=Red gui=reverse guifg=DarkMagenta
 endfunction
+
+syntax on
 
 if has('syntax')
   augroup ZenkakuSpace
@@ -83,6 +84,9 @@ au BufNewFile,BufRead *.ts set filetype=typescript
 au BufNewFile,BufRead *.tsx set filetype=typescript
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.pug set filetype=pug
+au BufNewFile,BufRead *.wat set filetype=wat
+au BufNewFile,BufRead *.wasm set filetype=wasm
+au BufNewFile,BufRead *.re set filetype=review
 
 "--- Tab
 nnoremap <S-Tab> gt
@@ -236,23 +240,5 @@ if dein#tap("vimtex")
   let g:vimtex_view_general_options_latexmk = '-reuse-instance'
 endif
 
-augroup cpp-namespace
-  autocmd!
-  autocmd FileType cpp inoremap <buffer><expr>; <SID>expand_namespace()
-augroup END
-function! s:expand_namespace()
-  let s = getline('.')[0:col('.')-1]
-  if s =~# '\<b;$'
-    return "\<BS>oost::"
-  elseif s =~# '\<s;$'
-    return "\<BS>td::"
-  elseif s =~# '\<d;$'
-    return "\<BS>etail::"
-  else
-    return ';'
-  endif
-endfunction
-
 filetype plugin on
 filetype indent on
-syntax enable

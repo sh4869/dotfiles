@@ -185,7 +185,7 @@ if has('win32')
 endif
 
 function! ZenkakuSpace()
-  highlight ZenkakuSpace cterm=underline ctermfg=Red gui=reverse guifg=DarkMagenta
+  highlight ZenkakuSpace cterm=underline ctermfg=Red gui=underline guifg=Blue
 endfunction
 
 if has('syntax')

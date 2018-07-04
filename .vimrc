@@ -37,7 +37,6 @@ colorscheme iceberg
 inoremap <silent> jj <ESC>
 nnoremap sw <C-w>w
 
-
 "> dein.vim
 let s:dein_dir = expand('~/.cache/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
@@ -48,7 +47,6 @@ if &runtimepath !~# '/dein.vim'
   endif
   execute 'set runtimepath^=' . s:dein_repo_dir
 endif
-
 
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
@@ -65,12 +63,31 @@ if dein#check_install()
   call dein#install()
 endif
 
+" > plugins
+augroup char_counter
+  autocmd!
+  autocmd BufNew,BufEnter,BufWrite,InsertLeave * call <SID>update()
+augroup END
+
+function! s:update()
+  let b:char_counter_count = s:char_count()
+endfunction
+
+function! s:char_count()
+  let l:result = 0
+  for l:linenum in range(0, line('$'))
+    let l:line = getline(l:linenum)
+    let l:result += strlen(substitute(l:line, ".", "x", "g"))
+  endfor
+  return l:result
+endfunction
+
 if dein#tap('lightline.vim')
   let g:lightline = {
         \ 'colorscheme' : 'wombat',
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'fugitive','readonly', 'filename', 'modified' ] ]
+        \             [ 'fugitive','readonly', 'filename', 'modified', 'char_counter' ] ],
         \ },
         \ 'component_visible_condition': {
         \   'readonly': '(&filetype!~# "\v(help|vimfiler|unite)"&& &readonly)',
@@ -78,6 +95,7 @@ if dein#tap('lightline.vim')
         \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
         \ },
         \ 'component': {
+        \   'char_counter': '%{b:char_counter_count}',
         \   'readonly': '%{&readonly?"RO":""}',
         \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
         \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'

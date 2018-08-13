@@ -31,7 +31,6 @@ set encoding=utf-8
 set notitle
 "" カラースキーマ
 colorscheme iceberg
-
 "> キーボード
 inoremap <silent> jj <ESC>
 nnoremap sw <C-w>w
@@ -62,13 +61,13 @@ if dein#check_install()
   call dein#install()
 endif
 
-" > plugins
+" > char count
 augroup char_counter
   autocmd!
-  autocmd BufNew,BufEnter,BufWrite,InsertLeave * call <SID>update()
+  autocmd BufNew,BufEnter,BufWrite,InsertCharPre * call <SID>char_count_update()
 augroup END
 
-function! s:update()
+function! s:char_count_update()
   let b:char_counter_count = s:char_count()
 endfunction
 
@@ -81,6 +80,7 @@ function! s:char_count()
   return l:result
 endfunction
 
+" > plugins
 if dein#tap('lightline.vim')
   let g:lightline = {
         \ 'colorscheme' : 'wombat',

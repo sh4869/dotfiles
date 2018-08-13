@@ -7,4 +7,7 @@ set guioptions-=l
 set guioptions-=L
 set visualbell t_vb=
 set noerrorbells
-set guifont=M+\ 1mn\ 12
+colorscheme snow
+set background=dark
+hi NonText guibg=NONE guifg=DarkGreen
+set guifont=M+\ 2m\ 12

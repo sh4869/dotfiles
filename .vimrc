@@ -31,7 +31,6 @@ set encoding=utf-8
 set notitle
 "" カラースキーマ
 colorscheme iceberg
-"" 有効化
 
 "> キーボード
 inoremap <silent> jj <ESC>

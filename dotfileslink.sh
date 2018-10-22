@@ -27,13 +27,12 @@ setting_vimrc(){
       esac
     done
   else
-    ln -s ~/dotfiles/.vimrc ~/.vimrc
+    ln -s ~/dotfiles/vimrc ~/.vimrc
     echo "Replce .vimrc!!"
   fi
   rm ~/.vim/rc/*.toml
   ln -s ~/dotfiles/vim/dein.toml ~/.vim/rc/dein.toml
   ln -s ~/dotfiles/vim/dein_lazy.toml ~/.vim/rc/dein_lazy.toml
-
 }
 
 setting_bash(){
@@ -48,7 +47,7 @@ setting_bash(){
         y)
           rm ~/.bashrc 
           echo "Remove .bashrc"
-          ln -s ~/dotfiles/.bashrc ~/.bashrc
+          ln -s ~/dotfiles/bashrc ~/.bashrc
           echo "And Replace .bashrc!!"
           break
           ;;
@@ -62,7 +61,7 @@ setting_bash(){
       esac
     done
   else
-    ln -s ~/dotfiles/.bashrc ~/.bashrc
+    ln -s ~/dotfiles/bashrc ~/.bashrc
     echo "Replce .bashrc!!"
   fi
 }
@@ -81,7 +80,7 @@ setting_gitconfig(){
           y)
             rm ~/.gitconfig 
             echo "Remove .gitconfig"
-            ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+            ln -s ~/dotfiles/gitconfig ~/.gitconfig
             echo "And Replace .gitconfig!!"
             break
             ;;
@@ -95,7 +94,7 @@ setting_gitconfig(){
         esac
       done
     else
-      ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+      ln -s ~/dotfiles/gitconfig ~/.gitconfig
       echo "Replce .gitconfig!!"
     fi
   else

@@ -1,3 +1,4 @@
+set filetype=vim
 """ sh4869 .vimrc
 
 " > 標準設定
@@ -7,7 +8,7 @@ set wrap
 set ambiwidth=double
 set display=lastline
 set list
-set listchars=tab:>-,trail:_,eol:↲
+set listchars=tab:>-,trail:_
 set showmatch
 set matchtime=1
 set synmaxcol=320
@@ -30,10 +31,13 @@ set encoding=utf-8
 "" その他
 set notitle
 "" カラースキーマ
-colorscheme iceberg
 "> キーボード
 inoremap <silent> jj <ESC>
 nnoremap sw <C-w>w
+
+colorscheme iceberg
+syntax on
+filetype plugin indent on
 
 "> dein.vim
 let s:dein_dir = expand('~/.cache/dein')
@@ -192,15 +196,6 @@ if dein#tap("vimtex")
   let g:vimtex_view_general_options_latexmk = '-reuse-instance'
 endif
 
-if has('win32')
-  set t_Co=256
-  let &t_AB="\e[48;5;%dm"
-  let &t_AF="\e[38;5;%dm"
-  "" For Cmder
-  inoremap <Char-0x07F> <BS>
-  noremap <Char-0x07F> <BS>
-endif
-
 function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=underline ctermfg=Red gui=underline guifg=Blue
 endfunction
@@ -214,5 +209,13 @@ if has('syntax')
   call ZenkakuSpace()
 endif
 
-syntax on
-filetype plugin indent on
+if has("win32") && !has("gui_running")
+    set term=xterm
+    set t_Co=256
+    let &t_AB="\e[48;5;%dm"
+    let &t_AF="\e[38;5;%dm"
+    inoremap <Char-0x07F> <BS>
+    nnoremap <Char-0x07F> <BS>
+    colorscheme iceberg
+endif
+

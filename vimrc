@@ -1,4 +1,4 @@
-set filetype=vim
+scriptencoding utf-8
 """ sh4869 .vimrc
 
 " > 標準設定
@@ -36,8 +36,6 @@ inoremap <silent> jj <ESC>
 nnoremap sw <C-w>w
 
 colorscheme iceberg
-syntax on
-filetype plugin indent on
 
 "> dein.vim
 let s:dein_dir = expand('~/.cache/dein')
@@ -219,3 +217,5 @@ if has("win32") && !has("gui_running")
     colorscheme iceberg
 endif
 
+syntax on
+filetype plugin indent on

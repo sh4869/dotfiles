@@ -179,10 +179,6 @@ if dein#tap("lexima.vim")
   let g:lexima_enable_basic_rules = 1
 endif
 
-if dein#tap("AOJ.vim")
-  let g:aoj#user_id = "sh4869"
-endif
-
 if dein#tap("vim-markdown")
   let g:vim_markdown_folding_disabled = 1
 endif

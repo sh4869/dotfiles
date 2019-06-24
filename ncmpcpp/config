@@ -1,0 +1,20 @@
+current_item_prefix = $(red)
+main_window_color = cyan
+current_item_inactive_column_prefix = $(white)
+song_columns_list_format = "(25)[cyan]{a} (40)[]{t|f:Title} (30)[red]{b} (7f)[green]{l}"
+user_interface="alternative"
+media_library_primary_tag = album_artist
+screen_switcher_mode = playlist, media_library, last_fm
+lastfm_preferred_language = ja
+ignore_leading_the = yes
+audio_output {
+    type            "my_fifo"
+      name            "Visualizer feed"
+      path            "/tmp/mpd.fifo"
+      format          "44100:16:2"
+}
+visualizer_type = "spectrum" (spectrum/wave)
+
+visualizer_look = "●┃"
+
+progressbar_look = "▃▃▃"

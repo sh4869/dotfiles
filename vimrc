@@ -2,6 +2,8 @@ scriptencoding utf-8
 """ sh4869 .vimrc
 
 " > 標準設定
+set fileencoding=utf-8
+set encoding=utf-8
 "" 表示関連設定
 set number
 set wrap
@@ -26,8 +28,6 @@ set scrolloff=5
 set nobackup
 set noundofile
 set noswapfile
-set fileencoding=utf-8
-set encoding=utf-8
 "" その他
 set notitle
 "" カラースキーマ
@@ -36,6 +36,7 @@ inoremap <silent> jj <ESC>
 nnoremap sw <C-w>w
 
 colorscheme iceberg
+colorscheme default
 
 "> dein.vim
 let s:dein_dir = expand('~/.cache/dein')

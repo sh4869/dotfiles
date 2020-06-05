@@ -192,7 +192,7 @@ if dein#tap("vimtex")
 endif
 
 function! ZenkakuSpace()
-  highlight ZenkakuSpace cterm=underline ctermfg=Red gui=underline guifg=Blue
+  highlight ZenkakuSpace cterm=underline ctermfg=Blue gui=underline guifg=Blue
 endfunction
 
 if has('syntax')
@@ -213,6 +213,11 @@ if has("win32") && !has("gui_running")
     nnoremap <Char-0x07F> <BS>
     colorscheme iceberg
 endif
+
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up>   gk
 
 syntax on
 filetype plugin indent on

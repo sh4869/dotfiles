@@ -94,10 +94,10 @@ if dein#tap('lightline.vim')
         \ 'component_visible_condition': {
         \   'readonly': '(&filetype!~# "\v(help|vimfiler|unite)"&& &readonly)',
         \   'modified': '(&filetype!~#"\v(help|vimfiler|unite)"&&(&modified||!&modifiable))',
-        \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+        \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())',
         \ },
         \ 'component': {
-        \   'char_counter': '%{b:char_counter_count}',
+        \   'char_counter': '%{(&filetype=="text"||&filetype=="tex")?b:char_counter_count:""}',
         \   'readonly': '%{&readonly?"RO":""}',
         \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
         \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'

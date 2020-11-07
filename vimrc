@@ -97,7 +97,7 @@ if dein#tap('lightline.vim')
         \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())',
         \ },
         \ 'component': {
-        \   'char_counter': '%{(&filetype=="text"||&filetype=="tex")?b:char_counter_count:""}',
+        \   'char_counter': '%{(&filetype=="text"||&filetype=="tex"||&filetype=="markdown")?b:char_counter_count:""}',
         \   'readonly': '%{&readonly?"RO":""}',
         \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
         \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'

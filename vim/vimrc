@@ -35,8 +35,6 @@ set notitle
 inoremap <silent> jj <ESC>
 nnoremap sw <C-w>w
 
-colorscheme iceberg
-colorscheme default
 
 "> dein.vim
 let s:dein_dir = expand('~/.cache/dein')
@@ -221,3 +219,4 @@ nnoremap <Up>   gk
 
 syntax on
 filetype plugin indent on
+colorscheme quantum

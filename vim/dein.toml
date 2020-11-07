@@ -79,7 +79,7 @@ repo = 'fuenor/vim-wordcount'
 repo = 'majutsushi/tagbar'
 
 [[plugins]]
-repo = 'cocopon/iceberg.vim'
+repo = 'hisaknown/nanomap.vim'
 
 [[plugins]]
-repo = 'hisaknown/nanomap.vim'
+repo = 'tyrannicaltoucan/vim-quantum'

@@ -59,7 +59,7 @@ module.exports = {
        background-position: top;
     }
     .terms_termGroup {
-      background: rgba(40,40,40,0.9) !important;
+      background: rgba(30,30,30,0.8) !important;
     }
     `,
 
@@ -86,7 +86,7 @@ module.exports = {
       red: '#C51E14',
       green: '#1DC121',
       yellow: '#C7C329',
-      blue: '#0A8FC4',
+      blue: '#0A2FC4',
       magenta: '#C839C5',
       cyan: '#20C5C6',
       white: '#C7C7C7',
@@ -98,6 +98,8 @@ module.exports = {
       lightMagenta: '#FD7CFC',
       lightCyan: '#68FDFE',
       lightWhite: '#FFFFFF',
+      limeGreen: '#32CD32',
+      lightCoral: '#F08080',
     },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
@@ -145,7 +147,6 @@ module.exports = {
     // Whether to use the WebGL renderer. Set it to false to use canvas-based
     // rendering (slower, but supports transparent backgrounds)
     webGLRenderer: true,
-
     // for advanced config flags please refer to https://hyper.is/#cfg
   },
 

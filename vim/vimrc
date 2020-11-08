@@ -100,7 +100,7 @@ if dein#tap('lightline.vim')
         \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
         \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
         \ },
-        \ 'separator': { 'left': "", 'right': "" },
+        \ 'separator': { 'left': "▶", 'right': "◀" },
         \ 'subseparator': { 'left': "|", 'right': "|" }
         \}
   set laststatus=2

@@ -30,6 +30,7 @@ set noundofile
 set noswapfile
 "" その他
 set notitle
+set nocompatible
 "" カラースキーマ
 "> キーボード
 inoremap <silent> jj <ESC>

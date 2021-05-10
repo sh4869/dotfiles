@@ -11,10 +11,6 @@ HISTCONTROL=ignoreboth
 # Check Window Size
 shopt -s checkwinsize 
 
-# read git completion file
-source ~/.git-completion.bash
-source ~/.git-prompt.sh
-
 # Display Git branch		
 length()  		
 {		

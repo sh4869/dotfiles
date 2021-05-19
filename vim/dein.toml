@@ -83,3 +83,16 @@ repo = 'hisaknown/nanomap.vim'
 
 [[plugins]]
 repo = 'tyrannicaltoucan/vim-quantum'
+hook_add = '''
+  set termguicolors
+  " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
+  " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
+  au MyAutoCmd VimEnter * nested colorscheme quantum
+'''
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+build = '''
+  git checkout release
+'''

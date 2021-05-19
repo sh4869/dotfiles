@@ -4,10 +4,6 @@
 repo = 'vim-ruby/vim-ruby'
 on_ft = ['ruby']
 
-## D language Plugin
-[[plugins]]
-repo = 'JesseKPhillips/d.vim'
-on_ft = ['d']
 
 ## Crystal Plugin
 [[plugins]]
@@ -33,10 +29,6 @@ repo = 'rust-lang/rust.vim'
 on_ft = ['rust']
 
 [[plugins]]
-repo = 'dart-lang/dart-vim-plugin'
-on_ft = ['dart']
-
-[[plugins]]
 repo = 'leafgarland/typescript-vim'
 on_ft = ['typescript']
 
@@ -49,16 +41,8 @@ repo = 'justmao945/vim-clang'
 on_ft = ['c','cpp']
 
 [[plugins]]
-repo = 'kannokanno/previm'
-on_ft = ['markdown']
-
-[[plugins]]
 repo = 'plasticboy/vim-markdown'
 on_ft = ['markdown']
-
-[[plugins]]
-repo = 'digitaltoad/vim-pug'
-on_ft = ['pug']
 
 [[plugins]]
 repo ='violetyk/iikanji-markdown.vim'
@@ -75,3 +59,6 @@ on_ft = ['review']
 [[plugins]]
 repo = 'dag/vim-fish'
 on_ft = ['fish']
+
+[[plugins]]
+repo = 'scalameta/coc-metals'

@@ -4,6 +4,7 @@
 [core]
 	excludesfile = ~/.global_gitignore
 	whitespace = cr-at-eol
+	editor = vim
 [ghq]
   root = ~/.ghq
 [color]

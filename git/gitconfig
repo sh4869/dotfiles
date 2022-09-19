@@ -13,7 +13,7 @@
   delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
   sw = switch
   swd = switch develop
-  puhe = push origin HEAD
+  puh = push origin HEAD
   clean-branches = !git delete-merged-branches && git fetch -p
 [init]
   defaultBranch = main

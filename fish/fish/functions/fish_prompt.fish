@@ -8,7 +8,7 @@ function fish_prompt
   end
   if not set -q __fish_prompt_char
     switch (id -u)
-      case 0
+     case 0
         set -g __fish_prompt_char \u276f\u276f
       case '*'
         set -g __fish_prompt_char »
@@ -25,9 +25,11 @@ function fish_prompt
   set -l bwhite (set_color -o white)
 
   # Configure __fish_git_prompt
+  set -g __fish_git_prompt_showuntrackedfiles true
   set -g __fish_git_prompt_show_informative_status true
   set -g __fish_git_prompt_char_dirtystate ' +'
   set -g __fish_git_prompt_char_stagedstate '⚡'
+  set -g __fish_git_prompt_char_untrackedfiles '… '
   set -g __fish_git_prompt_showcolorhints true
 
   # Color prompt char red for non-zero exit status

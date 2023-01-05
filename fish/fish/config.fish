@@ -1,7 +1,13 @@
-status --is-interactive; and source (nodenv init - --no-rehash|psub)
-#status --is-interactive; and source (pyenv init - --no-rehash|psub)
-eval (pyenv init --path)
-status --is-interactive; and source (rbenv init - --no-rehash|psub)
+if type -q nodenv
+    status --is-interactive; and source (nodenv init - --no-rehash|psub)
+end
+if type -q pyenv
+    status --is-interactive; and source (pyenv init - --no-rehash|psub)
+    eval (pyenv init --path)
+end
+if type -q rbenv
+    status --is-interactive; and source (rbenv init - --no-rehash|psub)
+end
 set PATH /usr/local/opt/gettext/bin $PATH
 alias tate='/Applications/TateShikiForMac.app/Contents/MacOS/TateShikiForMac'
 alias gvim='/Applications/MacVim.app/Contents/bin/gvim'

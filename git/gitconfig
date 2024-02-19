@@ -5,6 +5,7 @@
 	excludesfile = ~/.global_gitignore
 	whitespace = cr-at-eol
 	editor = vim
+	symlinks = true
 [ghq]
   root = ~/.ghq
 [color]

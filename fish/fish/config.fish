@@ -9,6 +9,4 @@ if type -q rbenv
     status --is-interactive; and source (rbenv init - --no-rehash|psub)
 end
 set PATH /usr/local/opt/gettext/bin $PATH
-alias tate='/Applications/TateShikiForMac.app/Contents/MacOS/TateShikiForMac'
-alias gvim='/Applications/MacVim.app/Contents/bin/gvim'
 
